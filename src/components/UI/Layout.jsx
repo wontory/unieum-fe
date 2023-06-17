@@ -1,18 +1,25 @@
+import styled from "@emotion/styled";
+
 import { Container } from "@mui/material";
 
 import Header from "./Header/Header";
 import Footer from "./Footer";
 
+const Wrapper = styled("div")({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  height: "100vh",
+});
+
 const Layout = ({ children }) => {
   return (
-    <>
+    <Wrapper>
       <Header />
       <Container
         maxWidth="lg"
         disableGutters={true}
         sx={{
-          height: "calc(100vh - 198px)",
-          flexGrow: 1,
           display: "flex",
           alignItems: "center",
           flexDirection: "column",
@@ -21,7 +28,7 @@ const Layout = ({ children }) => {
         {children}
       </Container>
       <Footer />
-    </>
+    </Wrapper>
   );
 };
 
