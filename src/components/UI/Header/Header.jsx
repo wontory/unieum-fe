@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Box from "@mui/material/Box";
@@ -35,9 +37,11 @@ const Header = () => {
             flexWrap: "no-wrap",
           }}
         >
-          <Button href="/">
-            <img src={Logo} style={{ width: 50 }} />
-          </Button>
+          <Link to="/">
+            <Button>
+              <img src={Logo} style={{ width: 50 }} />
+            </Button>
+          </Link>
         </Box>
         <Box
           sx={{
