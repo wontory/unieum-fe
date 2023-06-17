@@ -16,7 +16,7 @@ import MobileHeader from "./MobileHeader";
 const Header = () => {
   const theme = useTheme();
 
-  const matches = useMediaQuery(theme.breakpoints.up("sm"));
+  const matches = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
     <AppBar
