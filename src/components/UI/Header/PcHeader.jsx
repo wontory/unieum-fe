@@ -2,15 +2,13 @@ import { useAtomValue, useSetAtom } from "jotai";
 import { userAtom } from "../../../store/atoms";
 
 import { useNavigate, Link } from "react-router-dom";
+import TagManager from "react-gtm-module";
 
 import MenuItem from "@mui/material/MenuItem";
 import Typography from "@mui/material/Typography";
 
 import LightTooltip from "./LightTooltip";
 import kakao_login_large from "../../../assets/kakao_login_large.png";
-
-const pages = ["업로드", "복습", "로그아웃", "로그인"];
-const url = ["/", "/my", "/logout", "/login"];
 
 const PcHeader = () => {
   const navigate = useNavigate();
@@ -45,39 +43,31 @@ const PcHeader = () => {
 
   return (
     <>
-      <Link
-        key={0}
-        to={url[0]}
-        style={{ textDecoration: "none", color: "ButtonText" }}
-      >
-        <MenuItem key={pages[0]}>
+      <Link to="/" style={{ textDecoration: "none", color: "ButtonText" }}>
+        <MenuItem>
           <Typography variant="body2" textAlign="center">
-            {pages[0]}
+            업로드
           </Typography>
         </MenuItem>
       </Link>
 
-      <Link
-        key={1}
-        to={url[1]}
-        style={{ textDecoration: "none", color: "ButtonText" }}
-      >
-        <MenuItem key={pages[1]}>
+      <Link to="/my" style={{ textDecoration: "none", color: "ButtonText" }}>
+        <MenuItem>
           <Typography variant="body2" textAlign="center">
-            {pages[1]}
+            복습
           </Typography>
         </MenuItem>
       </Link>
 
       {isSignIn ? (
-        <MenuItem key={pages[2]} onClick={handleLogout}>
+        <MenuItem onClick={handleLogout}>
           <Typography variant="body2" textAlign="center">
-            {pages[2]}
+            로그아웃
           </Typography>
         </MenuItem>
       ) : (
         <LightTooltip title={"문제 생성을 위해 로그인!"} open={!isSignIn}>
-          <MenuItem id="login" key={pages[3]} onClick={handleLogin}>
+          <MenuItem id="login" onClick={handleLogin}>
             <img
               src={kakao_login_large}
               alt="kakao_login"
