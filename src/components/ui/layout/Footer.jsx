@@ -4,7 +4,7 @@ import { ReactComponent as Logo } from "../../../assets/unieum_logo.svg";
 
 const Footer = () => {
   return (
-    <div className="footer max-w-[1200px] w-full px-12 py-6">
+    <div className="footer max-w-[1200px] w-full px-8 py-6">
       <div>
         <Logo width="48" />
         <p>문의: 우측 하단 채널톡 또는 카카오톡 채널 @유니음</p>
