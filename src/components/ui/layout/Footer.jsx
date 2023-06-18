@@ -11,9 +11,15 @@ const Footer = () => {
         <p style={{ color: "rgba(0, 0, 0, 0.6)" }}>
           아피스 대표 황준걸 서울특별시 동작구 상도로 60가길 2
           <br />
-          <Link to="privacy">개인정보처리방침</Link>
+          <Link className="link link-hover" to="privacy">
+            개인정보처리방침
+          </Link>
           <br />
-          Copyright © <Link to="">Apis</Link> {new Date().getFullYear()}
+          Copyright ©{" "}
+          <Link className="link link-hover" to="">
+            Apis
+          </Link>{" "}
+          {new Date().getFullYear()}
           {"."}
         </p>
       </div>
