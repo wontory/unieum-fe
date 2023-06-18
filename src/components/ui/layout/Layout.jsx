@@ -11,10 +11,7 @@ const Layout = ({ children }) => {
         <Navbar />
       </header>
       <main>{children}</main>
-      <footer
-        className="flex justify-center"
-        style={{ background: "rgb(238, 238, 238)" }}
-      >
+      <footer className="flex justify-center bg-base-200">
         <Footer />
       </footer>
     </>
