@@ -10,7 +10,7 @@ const Navbar = () => {
     <nav className="navbar bg-base-100 max-w-[1200px] w-full">
       <div className="navbar-start">
         <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
+          <label tabIndex={0} className="btn btn-square btn-ghost lg:hidden">
             <CgMenuLeftAlt size={24} />
           </label>
           <ul
