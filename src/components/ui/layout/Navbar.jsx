@@ -38,13 +38,18 @@ const Navbar = () => {
         <Link className="btn btn-ghost hidden lg:flex" to="my">
           복습
         </Link>
-        <Link
-          className="btn btn-warning"
-          to="https://unieum.xn--hk3b17f.xn--3e0b707e:4000/auth/kakao"
+        <div
+          className="tooltip tooltip-open tooltip-bottom"
+          data-tip="사용하려면 로그인!"
         >
-          <BsChatFill />
-          로그인
-        </Link>
+          <Link
+            className="btn btn-warning"
+            to="https://unieum.xn--hk3b17f.xn--3e0b707e:4000/auth/kakao"
+          >
+            <BsChatFill />
+            로그인
+          </Link>
+        </div>
       </div>
     </nav>
   );
