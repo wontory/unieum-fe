@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { CgMenuLeftAlt } from "react-icons/cg";
 import { BsChatFill } from "react-icons/bs";
 
@@ -16,26 +18,33 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>업로드</a>
+              <Link to="">업로드</Link>
             </li>
             <li>
-              <a>복습</a>
+              <Link to="my">복습</Link>
             </li>
           </ul>
         </div>
       </div>
       <div className="navbar-center">
-        <a className="btn btn-ghost normal-case text-xl">
+        <Link className="btn btn-ghost normal-case text-xl" to="">
           <Logo width="48" />
-        </a>
+        </Link>
       </div>
       <div className="navbar-end gap-2">
-        <a className="btn btn-ghost hidden lg:flex">업로드</a>
-        <a className="btn btn-ghost hidden lg:flex">복습</a>
-        <a className="btn btn-warning">
+        <Link className="btn btn-ghost hidden lg:flex" to="">
+          업로드
+        </Link>
+        <Link className="btn btn-ghost hidden lg:flex" to="my">
+          복습
+        </Link>
+        <Link
+          className="btn btn-warning"
+          to="https://unieum.xn--hk3b17f.xn--3e0b707e:4000/auth/kakao"
+        >
           <BsChatFill />
           로그인
-        </a>
+        </Link>
       </div>
     </nav>
   );
