@@ -39,6 +39,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react-hooks", "virtual:1e02ddce9d95d530bbb17d7e67f130e8a0ebc9c97ba62e0fb579ab78a8850ddc28f1998e44e94e4531e2163b3475c9815f85b6b77edf2d3e7b9fb3ce905e0c79#npm:4.6.0"],\
             ["eslint-plugin-react-refresh", "virtual:1e02ddce9d95d530bbb17d7e67f130e8a0ebc9c97ba62e0fb579ab78a8850ddc28f1998e44e94e4531e2163b3475c9815f85b6b77edf2d3e7b9fb3ce905e0c79#npm:0.3.5"],\
             ["filepond", "npm:4.30.4"],\
+            ["filepond-plugin-image-exif-orientation", "virtual:1e02ddce9d95d530bbb17d7e67f130e8a0ebc9c97ba62e0fb579ab78a8850ddc28f1998e44e94e4531e2163b3475c9815f85b6b77edf2d3e7b9fb3ce905e0c79#npm:1.0.11"],\
+            ["filepond-plugin-image-preview", "virtual:1e02ddce9d95d530bbb17d7e67f130e8a0ebc9c97ba62e0fb579ab78a8850ddc28f1998e44e94e4531e2163b3475c9815f85b6b77edf2d3e7b9fb3ce905e0c79#npm:4.6.11"],\
             ["postcss", "npm:8.4.24"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:1e02ddce9d95d530bbb17d7e67f130e8a0ebc9c97ba62e0fb579ab78a8850ddc28f1998e44e94e4531e2163b3475c9815f85b6b77edf2d3e7b9fb3ce905e0c79#npm:18.2.0"],\
@@ -2493,6 +2495,50 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["filepond-plugin-image-exif-orientation", [\
+        ["npm:1.0.11", {\
+          "packageLocation": "./.yarn/cache/filepond-plugin-image-exif-orientation-npm-1.0.11-d1da53d274-e9b8c886ea.zip/node_modules/filepond-plugin-image-exif-orientation/",\
+          "packageDependencies": [\
+            ["filepond-plugin-image-exif-orientation", "npm:1.0.11"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:1e02ddce9d95d530bbb17d7e67f130e8a0ebc9c97ba62e0fb579ab78a8850ddc28f1998e44e94e4531e2163b3475c9815f85b6b77edf2d3e7b9fb3ce905e0c79#npm:1.0.11", {\
+          "packageLocation": "./.yarn/__virtual__/filepond-plugin-image-exif-orientation-virtual-bd4e9146ed/0/cache/filepond-plugin-image-exif-orientation-npm-1.0.11-d1da53d274-e9b8c886ea.zip/node_modules/filepond-plugin-image-exif-orientation/",\
+          "packageDependencies": [\
+            ["filepond-plugin-image-exif-orientation", "virtual:1e02ddce9d95d530bbb17d7e67f130e8a0ebc9c97ba62e0fb579ab78a8850ddc28f1998e44e94e4531e2163b3475c9815f85b6b77edf2d3e7b9fb3ce905e0c79#npm:1.0.11"],\
+            ["@types/filepond", null],\
+            ["filepond", "npm:4.30.4"]\
+          ],\
+          "packagePeers": [\
+            "@types/filepond",\
+            "filepond"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["filepond-plugin-image-preview", [\
+        ["npm:4.6.11", {\
+          "packageLocation": "./.yarn/cache/filepond-plugin-image-preview-npm-4.6.11-632d3073a5-436ee33969.zip/node_modules/filepond-plugin-image-preview/",\
+          "packageDependencies": [\
+            ["filepond-plugin-image-preview", "npm:4.6.11"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:1e02ddce9d95d530bbb17d7e67f130e8a0ebc9c97ba62e0fb579ab78a8850ddc28f1998e44e94e4531e2163b3475c9815f85b6b77edf2d3e7b9fb3ce905e0c79#npm:4.6.11", {\
+          "packageLocation": "./.yarn/__virtual__/filepond-plugin-image-preview-virtual-c69002ab40/0/cache/filepond-plugin-image-preview-npm-4.6.11-632d3073a5-436ee33969.zip/node_modules/filepond-plugin-image-preview/",\
+          "packageDependencies": [\
+            ["filepond-plugin-image-preview", "virtual:1e02ddce9d95d530bbb17d7e67f130e8a0ebc9c97ba62e0fb579ab78a8850ddc28f1998e44e94e4531e2163b3475c9815f85b6b77edf2d3e7b9fb3ce905e0c79#npm:4.6.11"],\
+            ["@types/filepond", null],\
+            ["filepond", "npm:4.30.4"]\
+          ],\
+          "packagePeers": [\
+            "@types/filepond",\
+            "filepond"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["fill-range", [\
         ["npm:7.0.1", {\
           "packageLocation": "./.yarn/cache/fill-range-npm-7.0.1-b8b1817caa-cc283f4e65.zip/node_modules/fill-range/",\
@@ -4941,6 +4987,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react-hooks", "virtual:1e02ddce9d95d530bbb17d7e67f130e8a0ebc9c97ba62e0fb579ab78a8850ddc28f1998e44e94e4531e2163b3475c9815f85b6b77edf2d3e7b9fb3ce905e0c79#npm:4.6.0"],\
             ["eslint-plugin-react-refresh", "virtual:1e02ddce9d95d530bbb17d7e67f130e8a0ebc9c97ba62e0fb579ab78a8850ddc28f1998e44e94e4531e2163b3475c9815f85b6b77edf2d3e7b9fb3ce905e0c79#npm:0.3.5"],\
             ["filepond", "npm:4.30.4"],\
+            ["filepond-plugin-image-exif-orientation", "virtual:1e02ddce9d95d530bbb17d7e67f130e8a0ebc9c97ba62e0fb579ab78a8850ddc28f1998e44e94e4531e2163b3475c9815f85b6b77edf2d3e7b9fb3ce905e0c79#npm:1.0.11"],\
+            ["filepond-plugin-image-preview", "virtual:1e02ddce9d95d530bbb17d7e67f130e8a0ebc9c97ba62e0fb579ab78a8850ddc28f1998e44e94e4531e2163b3475c9815f85b6b77edf2d3e7b9fb3ce905e0c79#npm:4.6.11"],\
             ["postcss", "npm:8.4.24"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:1e02ddce9d95d530bbb17d7e67f130e8a0ebc9c97ba62e0fb579ab78a8850ddc28f1998e44e94e4531e2163b3475c9815f85b6b77edf2d3e7b9fb3ce905e0c79#npm:18.2.0"],\
