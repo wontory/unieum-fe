@@ -8,7 +8,7 @@ const Footer = () => {
       <div>
         <Logo width="48" />
         <p>문의: 우측 하단 채널톡 또는 카카오톡 채널 @유니음</p>
-        <p style={{ color: "rgba(0, 0, 0, 0.6)" }}>
+        <p className="text-[#00000099]">
           아피스 대표 황준걸 서울특별시 동작구 상도로 60가길 2
           <br />
           <Link className="link link-hover" to="privacy">

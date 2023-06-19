@@ -4,13 +4,10 @@ import Navbar from "./Navbar";
 const Layout = ({ children }) => {
   return (
     <>
-      <header
-        className="flex justify-center"
-        style={{ borderBottom: "1px solid rgb(205, 205, 205)" }}
-      >
+      <header className="flex justify-center bg-base-100 border-b border-base-200">
         <Navbar />
       </header>
-      <main>{children}</main>
+      <main className="flex justify-center">{children}</main>
       <footer className="flex justify-center bg-base-200">
         <Footer />
       </footer>
