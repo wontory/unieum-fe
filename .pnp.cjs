@@ -28,6 +28,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
+            ["@tailwindcss/typography", "virtual:1e02ddce9d95d530bbb17d7e67f130e8a0ebc9c97ba62e0fb579ab78a8850ddc28f1998e44e94e4531e2163b3475c9815f85b6b77edf2d3e7b9fb3ce905e0c79#npm:0.5.9"],\
             ["@types/react", "npm:18.2.12"],\
             ["@types/react-dom", "npm:18.2.5"],\
             ["@vitejs/plugin-react-swc", "virtual:1e02ddce9d95d530bbb17d7e67f130e8a0ebc9c97ba62e0fb579ab78a8850ddc28f1998e44e94e4531e2163b3475c9815f85b6b77edf2d3e7b9fb3ce905e0c79#npm:3.3.2"],\
@@ -1146,6 +1147,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/unplugged/@swc-core-win32-x64-msvc-npm-1.3.64-106b444f52/node_modules/@swc/core-win32-x64-msvc/",\
           "packageDependencies": [\
             ["@swc/core-win32-x64-msvc", "npm:1.3.64"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@tailwindcss/typography", [\
+        ["npm:0.5.9", {\
+          "packageLocation": "./.yarn/cache/@tailwindcss-typography-npm-0.5.9-c16859b9da-b98e21bdd1.zip/node_modules/@tailwindcss/typography/",\
+          "packageDependencies": [\
+            ["@tailwindcss/typography", "npm:0.5.9"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:1e02ddce9d95d530bbb17d7e67f130e8a0ebc9c97ba62e0fb579ab78a8850ddc28f1998e44e94e4531e2163b3475c9815f85b6b77edf2d3e7b9fb3ce905e0c79#npm:0.5.9", {\
+          "packageLocation": "./.yarn/__virtual__/@tailwindcss-typography-virtual-f0c2e74d0a/0/cache/@tailwindcss-typography-npm-0.5.9-c16859b9da-b98e21bdd1.zip/node_modules/@tailwindcss/typography/",\
+          "packageDependencies": [\
+            ["@tailwindcss/typography", "virtual:1e02ddce9d95d530bbb17d7e67f130e8a0ebc9c97ba62e0fb579ab78a8850ddc28f1998e44e94e4531e2163b3475c9815f85b6b77edf2d3e7b9fb3ce905e0c79#npm:0.5.9"],\
+            ["@types/tailwindcss", null],\
+            ["lodash.castarray", "npm:4.4.0"],\
+            ["lodash.isplainobject", "npm:4.0.6"],\
+            ["lodash.merge", "npm:4.6.2"],\
+            ["postcss-selector-parser", "npm:6.0.10"],\
+            ["tailwindcss", "npm:3.3.2"]\
+          ],\
+          "packagePeers": [\
+            "@types/tailwindcss",\
+            "tailwindcss"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3333,6 +3360,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["lodash.castarray", [\
+        ["npm:4.4.0", {\
+          "packageLocation": "./.yarn/cache/lodash.castarray-npm-4.4.0-f3706198e9-fca8c7047e.zip/node_modules/lodash.castarray/",\
+          "packageDependencies": [\
+            ["lodash.castarray", "npm:4.4.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lodash.isplainobject", [\
+        ["npm:4.0.6", {\
+          "packageLocation": "./.yarn/cache/lodash.isplainobject-npm-4.0.6-d73937742f-29c6351f28.zip/node_modules/lodash.isplainobject/",\
+          "packageDependencies": [\
+            ["lodash.isplainobject", "npm:4.0.6"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["lodash.merge", [\
         ["npm:4.6.2", {\
           "packageLocation": "./.yarn/cache/lodash.merge-npm-4.6.2-77cb4416bf-ad580b4bdb.zip/node_modules/lodash.merge/",\
@@ -4046,6 +4091,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["postcss-selector-parser", [\
+        ["npm:6.0.10", {\
+          "packageLocation": "./.yarn/cache/postcss-selector-parser-npm-6.0.10-a4d7aaa270-46afaa60e3.zip/node_modules/postcss-selector-parser/",\
+          "packageDependencies": [\
+            ["postcss-selector-parser", "npm:6.0.10"],\
+            ["cssesc", "npm:3.0.0"],\
+            ["util-deprecate", "npm:1.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:6.0.13", {\
           "packageLocation": "./.yarn/cache/postcss-selector-parser-npm-6.0.13-f732d92326-f89163338a.zip/node_modules/postcss-selector-parser/",\
           "packageDependencies": [\
@@ -4835,6 +4889,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["unieum-fe", "workspace:."],\
+            ["@tailwindcss/typography", "virtual:1e02ddce9d95d530bbb17d7e67f130e8a0ebc9c97ba62e0fb579ab78a8850ddc28f1998e44e94e4531e2163b3475c9815f85b6b77edf2d3e7b9fb3ce905e0c79#npm:0.5.9"],\
             ["@types/react", "npm:18.2.12"],\
             ["@types/react-dom", "npm:18.2.5"],\
             ["@vitejs/plugin-react-swc", "virtual:1e02ddce9d95d530bbb17d7e67f130e8a0ebc9c97ba62e0fb579ab78a8850ddc28f1998e44e94e4531e2163b3475c9815f85b6b77edf2d3e7b9fb3ce905e0c79#npm:3.3.2"],\
