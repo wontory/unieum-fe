@@ -1982,25 +1982,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"filepond-plugin-image-exif-orientation@npm:^1.0.11":
-  version: 1.0.11
-  resolution: "filepond-plugin-image-exif-orientation@npm:1.0.11"
+"filepond-plugin-file-validate-type@npm:^1.2.8":
+  version: 1.2.8
+  resolution: "filepond-plugin-file-validate-type@npm:1.2.8"
   peerDependencies:
-    filepond: ">=3.x <5.x"
-  checksum: e9b8c886eac8da9a17684937aa8e702b65c3286c6feeb5a987c7eea0bd94b50e8e5804ceea3a257a4b0dfbaffd3657f9cd3e4f7be5a043e69a201f5e96f77116
+    filepond: ">=1.x <5.x"
+  checksum: 5a8334323d0f9ef154f4f5788125e8b724ab3e39f23ccb35defad8d4a0f324f3097c280858f9662278576a9e9929065739c455f3bfe7bab1827bd1d9fe32d204
   languageName: node
   linkType: hard
 
-"filepond-plugin-image-preview@npm:^4.6.11":
-  version: 4.6.11
-  resolution: "filepond-plugin-image-preview@npm:4.6.11"
+"filepond-plugin-pdf-preview@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "filepond-plugin-pdf-preview@npm:1.0.4"
+  dependencies:
+    filepond: ^4.25.1
   peerDependencies:
     filepond: ">=4.x <5.x"
-  checksum: 436ee3396910efe7973bbaf4578eb2a2b19246ea4b94e6d6265361b37919c978d4ceed8fbd6fa5b8f24fe848ae5e6270cae243a4ac5f84744960fa107bb8da4e
+  checksum: 81a63e149ad96290d1ea928ce0eadaae14f3826ec22c96d5e5793f1f7e5d0de02842c7b8492fd99432ec47b1e319eb57717b057a14856ccbee1d981e600000fd
   languageName: node
   linkType: hard
 
-"filepond@npm:^4.30.4":
+"filepond@npm:^4.25.1, filepond@npm:^4.30.4":
   version: 4.30.4
   resolution: "filepond@npm:4.30.4"
   checksum: ec1c06a11ceda231e5589f52307fa2f34b9c67c14b22c2be7adde227159f32e9ed1aa0e0a32fbca4e08a837b6714084e9f629c097a669fc1c3076be8c5f3c295
@@ -4151,8 +4153,8 @@ __metadata:
     eslint-plugin-react-hooks: ^4.6.0
     eslint-plugin-react-refresh: ^0.3.4
     filepond: ^4.30.4
-    filepond-plugin-image-exif-orientation: ^1.0.11
-    filepond-plugin-image-preview: ^4.6.11
+    filepond-plugin-file-validate-type: ^1.2.8
+    filepond-plugin-pdf-preview: ^1.0.4
     postcss: ^8.4.24
     react: ^18.2.0
     react-dom: ^18.2.0
