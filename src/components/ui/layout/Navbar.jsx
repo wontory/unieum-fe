@@ -7,7 +7,7 @@ import { ReactComponent as Logo } from "../../../assets/unieum_logo.svg";
 
 const Navbar = () => {
   return (
-    <nav className="navbar max-w-[1200px] w-full px-4">
+    <nav className="navbar max-w-[1200px] w-full">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-square btn-ghost lg:hidden">
