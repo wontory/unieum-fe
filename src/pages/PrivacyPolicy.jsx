@@ -13,11 +13,11 @@ const PrivacyPolicy = () => {
         공지사항(또는 개별공지)을 통하여 공지할 것입니다.
       </p>
       <div>
-        <ul className="list-inside list-disc">
+        <ul className="list-disc pl-4">
           <li>
             수집하는 개인정보 항목 회사는 회원 가입, 상담, 서비스 신청 등을 위해
             아래와 같은 개인정보를 수집하고 있습니다.
-            <ul className="list-inside list-[square] pl-4">
+            <ul className="list-[square] pl-4">
               <li>
                 수집항목: 카카오계정(이메일), 닉네임, 카카오톡 채널 추가 상태 및
                 내역
@@ -28,7 +28,7 @@ const PrivacyPolicy = () => {
           <li>
             개인정보의 수집 및 이용목적 회사는 수집한 개인정보를 다음의 목적을
             위해 활용합니다.
-            <ul className="list-inside list-[square] pl-4">
+            <ul className="list-[square] pl-4">
               <li>유니음 서비스 내 이용자 식별, 회원관리 및 서비스 제공</li>
             </ul>
           </li>
@@ -40,7 +40,7 @@ const PrivacyPolicy = () => {
             개인정보의 파기절차 및 방법 회사는 원칙적으로 개인정보 수집 및
             이용목적이 달성된 후에는 해당 정보를 지체없이 파기합니다. 파기절차
             및 방법은 다음과 같습니다.
-            <ul className="list-inside list-[square] pl-4">
+            <ul className="list-[square] pl-4">
               <li>
                 파기절차 회원님이 회원 가입 등을 위해 입력하신 정보는 목적이
                 달성된 후 별도의 DB로 옮겨져(종이의 경우 별도의 서류함) 내부
@@ -59,7 +59,7 @@ const PrivacyPolicy = () => {
             개인정보에 관한 민원서비스 회사는 고객의 개인정보를 보호하고
             개인정보와 관련한 불만을 처리하기 위하여 아래와 같이 관련 부서 및
             개인정보관리책임자를 지정하고 있습니다.
-            <ul className="list-inside list-[square] pl-4">
+            <ul className="list-[square] pl-4">
               <li>개인정보관리책임자 성명: 황준걸</li>
               <li>전화번호: 010-5252-6920</li>
               <li>이메일: teamapis12@gmail.com</li>
@@ -76,7 +76,7 @@ const PrivacyPolicy = () => {
       <div>
         기타 개인정보침해에 대한 신고나 상담이 필요하신 경우에는 아래 기관에
         문의하시기 바랍니다.
-        <ol className="list-inside list-decimal">
+        <ol className="list-decimal pl-4">
           <li>대검찰청 사이버수사과 (cybercid.spo.go.kr)</li>
           <li>경찰청 사이버테러대응센터 (www.ctrc.go.kr/02-392-0330)</li>
         </ol>
