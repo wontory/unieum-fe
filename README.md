@@ -21,7 +21,8 @@ PnP, Zero-Install
   - assets: 이미지 등  
   - components: 각종 페이지, UI 등에서 사용되는 Components  
     - ui: Card, Button 등 공통으로 사용되는 UI Components  
-      - layout: Header, Footer를 포함한 공통 Layout  
+      - layout: Header, Footer를 포함한 공통 Layout
+    - upload: Filepond, Text 업로드 Components  
   - pages: 페이지 Routing 관련  
   - styles: tailwindcss, font, css 등 스타일 관련  
 
