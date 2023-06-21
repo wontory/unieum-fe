@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useLayoutEffect } from "react";
+
+import { userApi } from "../apis/userApi";
 
 import Card from "../components/ui/Card";
 import FileUpload from "../components/upload/FileUpload";
@@ -10,6 +12,19 @@ import Feat3 from "../assets/feat_3.svg";
 const Main = () => {
   const [isSignIn, setIsSignIn] = useState(false);
   const [tabIndex, setTabIndex] = useState(0);
+
+  useLayoutEffect(() => {
+    if (isSignIn === false) {
+      userApi
+        .getIsSignIN()
+        .then((res) => {
+          setIsSignIn(true);
+        })
+        .catch((err) => {
+          setIsSignIn(false);
+        });
+    }
+  }, []);
 
   const tabArr = [
     { name: "업로드", content: <FileUpload isSignIn={isSignIn} /> },

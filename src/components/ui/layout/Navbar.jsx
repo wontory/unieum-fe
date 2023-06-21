@@ -1,4 +1,9 @@
+import { useState, useLayoutEffect } from "react";
+
 import { Link } from "react-router-dom";
+
+import { userApi } from "../../../apis/userApi";
+import { authApi } from "../../../apis/authApi";
 
 import { CgMenuLeftAlt } from "react-icons/cg";
 import { BsChatFill } from "react-icons/bs";
@@ -6,6 +11,21 @@ import { BsChatFill } from "react-icons/bs";
 import { ReactComponent as Logo } from "../../../assets/unieum_logo.svg";
 
 const Navbar = () => {
+  const [isSignIn, setIsSignIn] = useState(false);
+
+  useLayoutEffect(() => {
+    if (isSignIn === false) {
+      userApi
+        .getIsSignIN()
+        .then((res) => {
+          setIsSignIn(true);
+        })
+        .catch((err) => {
+          setIsSignIn(false);
+        });
+    }
+  }, []);
+
   return (
     <nav className="navbar max-w-[1200px] w-full">
       <div className="navbar-start">
@@ -38,18 +58,33 @@ const Navbar = () => {
         <Link className="btn btn-ghost hidden lg:flex" to="my">
           복습
         </Link>
-        <div
-          className="tooltip tooltip-open tooltip-bottom"
-          data-tip="사용하려면 로그인!"
-        >
-          <Link
-            className="btn btn-warning"
-            to="https://unieum.xn--hk3b17f.xn--3e0b707e:4000/auth/kakao"
+        {isSignIn ? (
+          <button
+            className="btn btn-ghost"
+            onClick={async () => {
+              try {
+                const res = await authApi.postSignOut();
+                if (!!res.data.data.id) setSignIn(false);
+              } catch (err) {}
+              location.reload();
+            }}
           >
-            <BsChatFill />
-            로그인
-          </Link>
-        </div>
+            로그아웃
+          </button>
+        ) : (
+          <div
+            className="tooltip tooltip-open tooltip-bottom"
+            data-tip="사용하려면 로그인!"
+          >
+            <Link
+              className="btn btn-warning"
+              to="https://develop.unieum.xn--hk3b17f.xn--3e0b707e:4000/auth/kakao"
+            >
+              <BsChatFill />
+              로그인
+            </Link>
+          </div>
+        )}
       </div>
     </nav>
   );
