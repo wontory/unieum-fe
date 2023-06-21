@@ -1,22 +1,20 @@
 import { useState } from "react";
 
-import { FilePond, registerPlugin } from "react-filepond";
-import FilePondPluginFileValidateType from "filepond-plugin-file-validate-type";
-import FilePondPluginPdfPreview from "filepond-plugin-pdf-preview";
-
 import Card from "../components/ui/Card";
-import "../styles/filepond.css";
-import "filepond/dist/filepond.min.css";
-import "filepond-plugin-pdf-preview/dist/filepond-plugin-pdf-preview.min.css";
+import FileUpload from "../components/upload/FileUpload";
+import TextUpload from "../components/upload/TextUpload";
 import Feat1 from "../assets/feat_1.svg";
 import Feat2 from "../assets/feat_2.svg";
 import Feat3 from "../assets/feat_3.svg";
 
-registerPlugin(FilePondPluginFileValidateType, FilePondPluginPdfPreview);
-
 const Main = () => {
-  const [files, setFiles] = useState([]);
   const [isSignIn, setIsSignIn] = useState(false);
+  const [tabIndex, setTabIndex] = useState(0);
+
+  const tabArr = [
+    { name: "업로드", content: <FileUpload isSignIn={isSignIn} /> },
+    { name: "텍스트 직접 입력", content: <TextUpload isSignIn={isSignIn} /> },
+  ];
 
   return (
     <div className="flex flex-col max-w-[1200px] w-full gap-6">
@@ -29,24 +27,21 @@ const Main = () => {
         </div>
       </div>
       <div className="tabs">
-        <a className="tab tab-bordered tab-active">업로드</a>
-        <a className="tab tab-bordered">텍스트 직접 입력</a>
+        {tabArr.map((tab, index) => (
+          <a
+            key={"tab" + index}
+            className={
+              index === tabIndex
+                ? "tab tab-bordered tab-active"
+                : "tab tab-bordered"
+            }
+            onClick={() => setTabIndex(index)}
+          >
+            {tab.name}
+          </a>
+        ))}
       </div>
-      <FilePond
-        files={files}
-        onupdatefiles={setFiles}
-        allowMultiple={true}
-        maxFiles={1}
-        name="files"
-        allowFileTypeValidation={true}
-        acceptedFileTypes={["application/pdf"]}
-        labelIdle='<span class="filepond--label-action">컴퓨터에서 파일 업로드</span> 또는 여기에 파일을 드롭!'
-        disabled={!isSignIn}
-      />
-      <textarea
-        className="textarea textarea-bordered textarea-lg"
-        placeholder="문제를 생성하고 싶은 텍스트를 복사 붙여넣기 해주세요."
-      />
+      {tabArr[tabIndex].content}
       <div className="flex flex-col gap-4 lg:flex-row justify-between">
         <Card className="w-full lg:w-96">
           <div className="badge badge-primary badge-lg">HOW</div>
