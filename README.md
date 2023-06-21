@@ -6,11 +6,11 @@
 3. [UI](#UI)
 4. [APIs](#APIs)
 
-### Package Manager
+## Package Manager
 Yarn Berry  
 PnP, Zero-Install
 
-### File Structure
+## File Structure
 - .yarn: packages  
 - public: favicon  
 - src: source  
@@ -21,9 +21,9 @@ PnP, Zero-Install
   - pages: 페이지 Routing 관련  
   - styles: tailwindcss, font, css 등 스타일 관련  
 
-### UI
+## UI
 |Page1|Page2|Page3|
 |---|---|---|
 ||||
 
-### APIs
+## APIs
