@@ -5,7 +5,6 @@ Yarn Berry
 PnP, Zero-Install
 
 ### File Structure
-- .git: github  
 - .yarn: packages  
 - public: favicon  
 - src: source  
