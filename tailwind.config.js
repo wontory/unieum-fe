@@ -6,6 +6,13 @@ export default {
   },
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
   daisyui: {
-    themes: ["light"],
+    themes: [
+      {
+        corporate: {
+          ...require("daisyui/src/theming/themes")["[data-theme=corporate]"],
+          accent: "#FEE500",
+        },
+      },
+    ],
   },
 };
