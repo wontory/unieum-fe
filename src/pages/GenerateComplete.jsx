@@ -1,4 +1,3 @@
-import Card from "../components/ui/Card";
 import img_study from "../assets/img_study.png";
 
 const GenerateComplete = () => {
