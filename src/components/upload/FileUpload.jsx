@@ -18,7 +18,6 @@ const FileUpload = ({ isSignIn }) => {
       files={files}
       onupdatefiles={setFiles}
       allowMultiple={true}
-      maxFiles={1}
       name="files"
       allowFileTypeValidation={true}
       acceptedFileTypes={["application/pdf"]}
