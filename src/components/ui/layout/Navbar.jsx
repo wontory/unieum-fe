@@ -77,7 +77,7 @@ const Navbar = () => {
             data-tip="사용하려면 로그인!"
           >
             <Link
-              className="btn btn-warning"
+              className="btn btn-accent"
               to="https://develop.unieum.xn--hk3b17f.xn--3e0b707e:4000/auth/kakao"
             >
               <BsChatFill />
