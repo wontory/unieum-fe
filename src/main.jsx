@@ -5,6 +5,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import App from "./App.jsx";
 import Main from "./pages/Main.jsx";
+import GenerateComplete from "./pages/GenerateComplete.jsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
 import "./styles/tailwind.css";
 
@@ -17,7 +18,10 @@ const router = createBrowserRouter([
       { path: "/my" },
       { path: "/quiz/:id" },
       { path: "/privacy", element: <PrivacyPolicy /> },
-      { path: "/404" },
+      // test
+      { path: "/test1", element: <GenerateComplete /> },
+      // 404
+      { path: "/*" },
     ],
   },
 ]);
