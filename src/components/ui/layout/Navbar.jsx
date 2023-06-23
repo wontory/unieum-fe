@@ -1,9 +1,8 @@
-import { useState, useLayoutEffect } from "react";
+import { useContext } from "react";
+
+import AuthContext from "../../../store/auth-context";
 
 import { Link } from "react-router-dom";
-
-import { userApi } from "../../../apis/userApi";
-import { authApi } from "../../../apis/authApi";
 
 import { CgMenuLeftAlt } from "react-icons/cg";
 import { BsChatFill } from "react-icons/bs";
@@ -11,20 +10,7 @@ import { BsChatFill } from "react-icons/bs";
 import { ReactComponent as Logo } from "../../../assets/unieum_logo.svg";
 
 const Navbar = () => {
-  const [isSignIn, setIsSignIn] = useState(false);
-
-  useLayoutEffect(() => {
-    if (isSignIn === false) {
-      userApi
-        .getIsSignIN()
-        .then((res) => {
-          setIsSignIn(true);
-        })
-        .catch((err) => {
-          setIsSignIn(false);
-        });
-    }
-  }, []);
+  const ctx = useContext(AuthContext);
 
   return (
     <nav className="navbar max-w-[1200px] w-full">
@@ -58,17 +44,8 @@ const Navbar = () => {
         <Link className="btn btn-ghost hidden lg:flex" to="my">
           복습
         </Link>
-        {isSignIn ? (
-          <button
-            className="btn btn-ghost"
-            onClick={async () => {
-              try {
-                const res = await authApi.postSignOut();
-                if (!!res.data.data.id) setSignIn(false);
-              } catch (err) {}
-              location.reload();
-            }}
-          >
+        {ctx.isSignedIn ? (
+          <button className="btn btn-ghost" onClick={ctx.onSignOut}>
             로그아웃
           </button>
         ) : (

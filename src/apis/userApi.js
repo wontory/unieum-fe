@@ -10,14 +10,14 @@ const userInstance = axios.create({
   withCredentials: true,
 });
 
-const getIsSignIN = async () => {
+const getIsSignedIn = async () => {
   try {
     return await userInstance.get(`${ROUTE}`);
   } catch (e) {
-    throw new Error("getIsSignIN error");
+    throw new Error("getIsSignedIn error");
   }
 };
 
 export const userApi = {
-  getIsSignIN,
+  getIsSignedIn,
 };
