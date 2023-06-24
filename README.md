@@ -33,4 +33,4 @@ PnP, Zero-Install
 ||||
 
 ## APIs
-[Swagger UI](https://develop.unieum.xn--hk3b17f.xn--3e0b707e:4000/api)
+[Swagger UI](https://develop.unieum.kr:4000/api)
