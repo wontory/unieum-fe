@@ -26,7 +26,7 @@ export const AuthContextProvider = ({ children }) => {
   const handleSignOut = async () => {
     try {
       const res = await authApi.postSignOut();
-      if (!!res.data.data.id) setIsSignedIn(false);
+      if (res.data.data.id) setIsSignedIn(false);
     } catch (err) {}
     setIsSignedIn(false);
     location.reload();

@@ -3,7 +3,7 @@ import axios from "axios";
 const ROUTE = "auth";
 
 const authInstance = axios.create({
-  baseURL: "https://develop.unieum.xn--hk3b17f.xn--3e0b707e:4000",
+  baseURL: "https://develop.unieum.kr:4000",
   headers: {
     AccessControlAllowOrigin: "*",
   },

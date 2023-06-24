@@ -55,7 +55,7 @@ const Navbar = () => {
           >
             <Link
               className="btn btn-accent"
-              to="https://develop.unieum.xn--hk3b17f.xn--3e0b707e:4000/auth/kakao"
+              to="https://develop.unieum.kr:4000/auth/kakao"
             >
               <BsChatFill />
               로그인
