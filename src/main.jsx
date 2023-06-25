@@ -10,6 +10,7 @@ import Main from "./pages/Main.jsx";
 import My from "./pages/My.jsx";
 import GenerateComplete from "./pages/GenerateComplete.jsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
+import NotFound from "./pages/NotFound.jsx";
 import "./styles/tailwind.css";
 
 const router = createBrowserRouter([
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
       // test
       { path: "/test1", element: <GenerateComplete /> },
       // 404
-      { path: "/*" },
+      { path: "/*", element: <NotFound /> },
     ],
   },
 ]);
