@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import Card from "../components/ui/Card";
+import FeatureCard from "../components/ui/FeatureCard";
 import FileUpload from "../components/upload/FileUpload";
 import TextUpload from "../components/upload/TextUpload";
 import Feat1 from "../assets/feat_1.svg";
@@ -41,8 +41,8 @@ const Main = () => {
         ))}
       </div>
       {tabArr[tabIndex].content}
-      <div className="flex flex-col gap-4 lg:flex-row justify-between">
-        <Card className="w-full lg:w-96">
+      <div className="flex flex-col gap-3 lg:flex-row justify-between">
+        <FeatureCard>
           <div className="badge badge-primary badge-lg">HOW</div>
           <h2 className="card-title">
             교수님이 주신 PDF, 그것만 있으면 됩니다!
@@ -51,26 +51,26 @@ const Main = () => {
             시험의 자료가 될 PDF 혹은 텍스트만 입력하면 AI가 자동으로 예상
             문제를 만들어 드려요.
           </p>
-          <img src={Feat1} />
-        </Card>
-        <Card className="card-side w-full lg:w-96">
+          <img src={Feat1} className="w-[170px] h-[201px]" />
+        </FeatureCard>
+        <FeatureCard>
           <div className="badge badge-primary badge-lg">WHO</div>
           <h2 className="card-title">내일 모레 시험인 당신...</h2>
           <p>
             예상 문제를 만들고 풀기는 커녕 PDF 읽을 시간도 없다고요? 잘
             찾아오셨습니다! 유니음이 지금 바로 문제를 만들어 드릴게요.
           </p>
-          <img src={Feat2} />
-        </Card>
-        <Card className="w-full lg:w-96">
+          <img src={Feat2} className="w-[170px] h-[201px]" />
+        </FeatureCard>
+        <FeatureCard>
           <div className="badge badge-primary badge-lg">WHERE</div>
           <h2 className="card-title">이제 언제 어디서나 문제를 풀어봐요~</h2>
           <p>
             등굣길, 하굣길, 집 등등... 원하면 어디에서나 유니음을 통해 시험 예상
             문제를 만들고 풀어볼 수 있어요.
           </p>
-          <img src={Feat3} />
-        </Card>
+          <img src={Feat3} className="w-[170px] h-[201px]" />
+        </FeatureCard>
       </div>
     </div>
   );
