@@ -18,6 +18,15 @@ const getIsSignedIn = async () => {
   }
 };
 
+const postSurvey = async (data) => {
+  try {
+    return await userInstance.post(`${ROUTE}/nps`, data);
+  } catch (e) {
+    throw new Error("postSurvey error");
+  }
+};
+
 export const userApi = {
   getIsSignedIn,
+  postSurvey,
 };

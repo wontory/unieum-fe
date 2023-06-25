@@ -10,10 +10,20 @@ const authInstance = axios.create({
   withCredentials: true,
 });
 
+const postReissueAccess = async () => {
+  return await authInstance.post(`${ROUTE}/reissue-access`);
+};
+
 const postSignOut = async () => {
   return await authInstance.post(`${ROUTE}/sign-out`);
 };
 
+const deleteWithdrawal = async () => {
+  return await authInstance.delete(`${ROUTE}`);
+};
+
 export const authApi = {
+  postReissueAccess,
   postSignOut,
+  deleteWithdrawal,
 };
