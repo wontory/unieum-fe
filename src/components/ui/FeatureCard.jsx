@@ -6,7 +6,7 @@ const FeatureCard = ({ children }) => {
         {children[1]}
         {children[2]}
       </div>
-      <figure>{children[3]}</figure>
+      <figure className="pr-6 py-6">{children[3]}</figure>
     </div>
   );
 };
