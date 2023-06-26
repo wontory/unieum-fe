@@ -13,7 +13,7 @@ const userInstance = axios.create({
 const getIsSignedIn = async () => {
   try {
     return await userInstance.get(`${ROUTE}`);
-  } catch (e) {
+  } catch (err) {
     throw new Error("getIsSignedIn error");
   }
 };
@@ -21,7 +21,7 @@ const getIsSignedIn = async () => {
 const postSurvey = async (data) => {
   try {
     return await userInstance.post(`${ROUTE}/nps`, data);
-  } catch (e) {
+  } catch (err) {
     throw new Error("postSurvey error");
   }
 };
