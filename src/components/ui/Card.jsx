@@ -3,7 +3,7 @@ const Card = ({ className, children }) => {
 
   return (
     <div className={classes}>
-      <div className="card-body">{children}</div>
+      <div className="card-body p-6">{children}</div>
     </div>
   );
 };
