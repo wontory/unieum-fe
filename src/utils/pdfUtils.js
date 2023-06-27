@@ -1,9 +1,11 @@
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 
-import { font } from "../assets/font";
+import { pretendard } from "../assets/font";
 
 const generatePdf = (data, isAnswerSheet) => {
+  const font = pretendard;
+
   const doc = new jsPDF();
 
   const tableData = data.flatMap((item) => [
