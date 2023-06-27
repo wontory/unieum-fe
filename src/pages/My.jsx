@@ -9,11 +9,13 @@ const My = () => {
 
   useEffect(() => {
     testApi.getList().then((res) => setTestList(res.data.data));
-    testList.sort((a, b) => {
-      const dateA = new Date(a.testCreateAt);
-      const dateB = new Date(b.testCreateAt);
-      return dateA.getTime() > dateB.getTime() ? 1 : -1;
-    });
+    setTestList(
+      testList.sort((a, b) => {
+        const dateA = new Date(a.testCreateAt);
+        const dateB = new Date(b.testCreateAt);
+        return dateA.getTime() - dateB.getTime();
+      })
+    );
   }, []);
 
   const formatDate = (test) => {
