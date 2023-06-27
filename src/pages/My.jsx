@@ -8,14 +8,14 @@ const My = () => {
   const [testList, setTestList] = useState([]);
 
   useEffect(() => {
-    testApi.getList().then((res) => setTestList(res.data.data));
-    setTestList(
-      [...testList].sort((a, b) => {
+    testApi.getList().then((res) => {
+      const sortedList = res.data.data.sort((a, b) => {
         const dateA = new Date(a.testCreateAt);
         const dateB = new Date(b.testCreateAt);
         return dateB.getTime() - dateA.getTime();
-      })
-    );
+      });
+      setTestList(sortedList);
+    });
   }, []);
 
   const formatDate = (test) => {
