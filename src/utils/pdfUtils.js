@@ -1,6 +1,7 @@
 import jsPDF from "jspdf";
-import "jspdf-autotable";
 import autoTable from "jspdf-autotable";
+
+import { font } from "../assets/font";
 
 const generatePdf = (data, isAnswerSheet) => {
   const doc = new jsPDF();
