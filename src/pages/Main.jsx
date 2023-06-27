@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 import FeatureCard from "../components/ui/FeatureCard";
-import FileUpload from "../components/upload/FileUpload";
-import TextUpload from "../components/upload/TextUpload";
+import FileUpload from "../components/TestUpload/FileUpload";
+import TextUpload from "../components/TestUpload/TextUpload";
 import Feat1 from "../assets/images/feat_1.svg";
 import Feat2 from "../assets/images/feat_2.svg";
 import Feat3 from "../assets/images/feat_3.svg";
