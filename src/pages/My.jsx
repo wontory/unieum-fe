@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 
 import { testApi } from "../apis/testApi";
 
+import generatePdf from "../utils/pdfUtils";
+
 const My = () => {
   const [testList, setTestList] = useState([]);
 
@@ -28,6 +30,15 @@ const My = () => {
     } else {
       return testCreatedAt.toLocaleString();
     }
+  };
+
+  const downloadPdf = async (withAnswers) => {
+    const res = await testApi.getTest(testGenerationId);
+    const testList = res.data.data.testList.map((e) => JSON.parse(e));
+
+    const question_pdf = generatePdf(testList, withAnswers);
+    const fileName = withAnswers ? "정답지.pdf" : "문제지.pdf";
+    question_pdf.save(fileName);
   };
 
   return (
@@ -70,10 +81,16 @@ const My = () => {
                     <td>{formatDate(test)}</td>
                     <td>
                       <div className="join">
-                        <button className="join-item btn btn-primary btn-outline btn-sm">
+                        <button
+                          className="join-item btn btn-primary btn-outline btn-sm"
+                          onClick={downloadPdf(false)}
+                        >
                           문제 PDF
                         </button>
-                        <button className="join-item btn btn-primary btn-outline btn-sm">
+                        <button
+                          className="join-item btn btn-primary btn-outline btn-sm"
+                          onClick={downloadPdf(true)}
+                        >
                           정답 PDF
                         </button>
                       </div>
