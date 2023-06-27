@@ -1,16 +1,35 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 
 import AuthContext from "../../store/auth-context";
+
+import { testApi } from "../../apis/testApi";
 
 const TextUpload = () => {
   const ctx = useContext(AuthContext);
 
+  const text = useRef();
+
+  const upload = async () => {
+    const response = await testApi.postText(text.current.value);
+
+    localStorage.setItem(
+      "testList",
+      JSON.stringify(response.data.data.testList)
+    );
+  };
+
   return (
-    <textarea
-      className="textarea textarea-bordered textarea-lg"
-      placeholder="문제를 생성하고 싶은 텍스트를 복사 붙여넣기 해주세요."
-      disabled={!ctx.isSignedIn}
-    />
+    <>
+      <textarea
+        className="textarea textarea-bordered textarea-lg"
+        placeholder="문제를 생성하고 싶은 텍스트를 복사 붙여넣기 해주세요."
+        ref={text}
+        disabled={!ctx.isSignedIn}
+      />
+      <button className="btn btn-primary" onClick={upload}>
+        문제 생성
+      </button>
+    </>
   );
 };
 
