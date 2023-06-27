@@ -32,7 +32,7 @@ const My = () => {
     }
   };
 
-  const downloadPdf = async (withAnswers) => {
+  const downloadPdf = async (testGenerationId, withAnswers) => {
     const res = await testApi.getTest(testGenerationId);
     const testList = res.data.data.testList.map((e) => JSON.parse(e));
 
@@ -83,13 +83,13 @@ const My = () => {
                       <div className="join">
                         <button
                           className="join-item btn btn-primary btn-outline btn-sm"
-                          onClick={downloadPdf(false)}
+                          onClick={downloadPdf(test.testGenerationId, false)}
                         >
                           문제 PDF
                         </button>
                         <button
                           className="join-item btn btn-primary btn-outline btn-sm"
-                          onClick={downloadPdf(true)}
+                          onClick={downloadPdf(test.testGenerationId, true)}
                         >
                           정답 PDF
                         </button>
