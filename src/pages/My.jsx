@@ -76,20 +76,24 @@ const My = () => {
               {testList.map((test, index) => {
                 return (
                   <tr key={test.testGenerationId}>
-                    <th>{index}</th>
+                    <th>{index + 1}</th>
                     <td>{test.fileName}</td>
                     <td>{formatDate(test)}</td>
                     <td>
                       <div className="join">
                         <button
                           className="join-item btn btn-primary btn-outline btn-sm"
-                          onClick={downloadPdf(test.testGenerationId, false)}
+                          onClick={() =>
+                            downloadPdf(test.testGenerationId, false)
+                          }
                         >
                           문제 PDF
                         </button>
                         <button
                           className="join-item btn btn-primary btn-outline btn-sm"
-                          onClick={downloadPdf(test.testGenerationId, true)}
+                          onClick={() =>
+                            downloadPdf(test.testGenerationId, true)
+                          }
                         >
                           정답 PDF
                         </button>
