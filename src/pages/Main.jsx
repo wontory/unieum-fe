@@ -41,7 +41,7 @@ const Main = () => {
         ))}
       </div>
       {tabArr[tabIndex].content}
-      <div className="flex flex-col gap-3 lg:flex-row justify-between">
+      <div className="flex flex-col gap-3 md:flex-row justify-between">
         <FeatureCard>
           <div className="badge badge-primary badge-lg">HOW</div>
           <h2 className="card-title">
