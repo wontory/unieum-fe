@@ -44,7 +44,7 @@ const TestList = ({ testList }) => {
           return (
             <tr key={test.testGenerationId}>
               <th>{index + 1}</th>
-              <td>{test.fileName}</td>
+              <td className="truncate">{test.fileName}</td>
               <td>{formatDate(test)}</td>
               <td>
                 <div className="join">
