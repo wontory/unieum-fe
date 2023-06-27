@@ -22,6 +22,7 @@ const FileUpload = () => {
   const upload = async (file) => {
     const formData = new FormData();
     formData.append("pdf", file);
+    formData.append("targetTestFormat", "short-answer");
 
     const response = await testApi.postPdf(formData);
 
