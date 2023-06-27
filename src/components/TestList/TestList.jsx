@@ -1,6 +1,6 @@
 import generatePdf from "../../utils/pdfUtils";
 
-const TestList = (testList) => {
+const TestList = ({ testList }) => {
   const formatDate = (test) => {
     const currentTime = new Date();
     const testCreatedAt = new Date(test.testCreateAt);
