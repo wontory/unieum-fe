@@ -20,23 +20,19 @@ const FileUpload = () => {
   const [files, setFiles] = useState([]);
 
   const upload = async (file) => {
-    try {
-      const formData = new FormData();
-      formData.append("pdf", file);
+    const formData = new FormData();
+    formData.append("pdf", file);
 
-      const response = await testApi.postPDF(formData);
+    const response = await testApi.postPdf(formData);
 
-      localStorage.setItem(
-        "testGenerationId",
-        response.data.data.testGenerationId
-      );
-      localStorage.setItem(
-        "testList",
-        JSON.stringify(response.data.data.testList)
-      );
-    } catch (err) {
-      console.log(err);
-    }
+    localStorage.setItem(
+      "testGenerationId",
+      response.data.data.testGenerationId
+    );
+    localStorage.setItem(
+      "testList",
+      JSON.stringify(response.data.data.testList)
+    );
   };
 
   return (
