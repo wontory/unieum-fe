@@ -28,6 +28,8 @@
     "filepond": "^4.30.4",
     "filepond-plugin-file-validate-type": "^1.2.8",
     "filepond-plugin-pdf-preview": "^1.0.4",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.5.29",
     "postcss": "^8.4.24",
     "react-filepond": "^7.1.2",
     "react-icons": "^4.9.0",
