@@ -37,16 +37,19 @@ const FileUpload = () => {
 
   return (
     <FilePond
+      name="files"
       files={files}
       onupdatefiles={setFiles}
       allowMultiple={true}
-      name="files"
       allowFileTypeValidation={true}
       acceptedFileTypes={["application/pdf"]}
-      labelIdle='<span class="filepond--label-action">컴퓨터에서 파일 업로드</span> 또는 여기에 파일을 드롭!'
+      instantUpload={true}
+      storeAsFile={true}
       server={{
         process: (file) => upload(file),
       }}
+      labelIdle='<span class="filepond--label-action">컴퓨터에서 파일 업로드</span> 또는 여기에 파일을 드롭!'
+      credits={false}
       disabled={!ctx.isSignedIn}
     />
   );
