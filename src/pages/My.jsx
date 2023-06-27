@@ -10,7 +10,7 @@ const My = () => {
   useEffect(() => {
     testApi.getList().then((res) => setTestList(res.data.data));
     setTestList(
-      testList.sort((a, b) => {
+      [...testList].sort((a, b) => {
         const dateA = new Date(a.testCreateAt);
         const dateB = new Date(b.testCreateAt);
         return dateB.getTime() - dateA.getTime();
