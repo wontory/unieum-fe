@@ -1,7 +1,7 @@
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 
-import { pretendard } from "../assets/font";
+import { pretendard } from "../assets/fonts/pretendard";
 
 const generatePdf = (data, isAnswerSheet) => {
   const font = pretendard;
