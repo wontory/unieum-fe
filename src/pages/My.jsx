@@ -12,7 +12,7 @@ const My = () => {
     testList.sort((a, b) => {
       const dateA = new Date(a.testCreateAt);
       const dateB = new Date(b.testCreateAt);
-      return dateA.getTime() < dateB.getTime() ? 1 : -1;
+      return dateA.getTime() > dateB.getTime() ? 1 : -1;
     });
   }, []);
 
