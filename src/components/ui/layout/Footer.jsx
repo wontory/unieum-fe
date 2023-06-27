@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { ReactComponent as Logo } from "../../../assets/unieum_logo.svg";
+import { ReactComponent as Logo } from "../../../assets/images/unieum_logo.svg";
 
 const Footer = () => {
   return (

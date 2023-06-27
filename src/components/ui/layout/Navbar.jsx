@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { CgMenuLeftAlt } from "react-icons/cg";
 import { BsChatFill } from "react-icons/bs";
 
-import { ReactComponent as Logo } from "../../../assets/unieum_logo.svg";
+import { ReactComponent as Logo } from "../../../assets/images/unieum_logo.svg";
 
 const Navbar = () => {
   const ctx = useContext(AuthContext);

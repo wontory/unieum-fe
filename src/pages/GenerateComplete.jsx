@@ -1,4 +1,4 @@
-import img_study from "../assets/img_study.png";
+import img_study from "../assets/images/img_study.png";
 
 const GenerateComplete = () => {
   return (
