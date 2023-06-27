@@ -51,51 +51,51 @@ const My = () => {
             </div>
           </div>
         ) : (
-          <>
-            <table className="table">
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>파일명</th>
-                  <th>시간</th>
-                  <th>다운로드</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                {testList.map((test, index) => {
-                  return (
-                    <tr key={test.testGenerationId}>
-                      <th>{index}</th>
-                      <td>{test.fileName}</td>
-                      <td>{formatDate(test)}</td>
-                      <td>
-                        <div className="join">
-                          <button className="join-item btn btn-primary btn-outline btn-sm">
-                            문제 PDF
-                          </button>
-                          <button className="join-item btn btn-primary btn-outline btn-sm">
-                            정답 PDF
-                          </button>
-                        </div>
-                      </td>
-                      <td>
-                        <button className="btn btn-primary btn-sm">
-                          바로 풀어보기
+          <table className="table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>파일명</th>
+                <th>시간</th>
+                <th>다운로드</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {testList.map((test, index) => {
+                return (
+                  <tr key={test.testGenerationId}>
+                    <th>{index}</th>
+                    <td>{test.fileName}</td>
+                    <td>{formatDate(test)}</td>
+                    <td>
+                      <div className="join">
+                        <button className="join-item btn btn-primary btn-outline btn-sm">
+                          문제 PDF
                         </button>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-            <div className="join">
-              <button className="join-item btn">«</button>
-              <button className="join-item btn">Page 1</button>
-              <button className="join-item btn">»</button>
-            </div>
-          </>
+                        <button className="join-item btn btn-primary btn-outline btn-sm">
+                          정답 PDF
+                        </button>
+                      </div>
+                    </td>
+                    <td>
+                      <button className="btn btn-primary btn-sm">
+                        바로 풀어보기
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
         )}
+      </div>
+      <div className="flex justify-center">
+        <div className="join">
+          <button className="join-item btn">«</button>
+          <button className="join-item btn">Page 1</button>
+          <button className="join-item btn">»</button>
+        </div>
       </div>
     </div>
   );
