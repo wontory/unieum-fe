@@ -23,6 +23,8 @@ const FileUpload = () => {
     const formData = new FormData();
     formData.append("pdf", files);
 
+    console.log(formData);
+
     const response = await testApi.postPdf(formData);
 
     localStorage.setItem(
@@ -44,7 +46,6 @@ const FileUpload = () => {
         allowMultiple={true}
         allowFileTypeValidation={true}
         acceptedFileTypes={["application/pdf"]}
-        storeAsFile={true}
         labelIdle='<span class="filepond--label-action">컴퓨터에서 파일 업로드</span> 또는 여기에 파일을 드롭!'
         credits={false}
         disabled={!ctx.isSignedIn}
