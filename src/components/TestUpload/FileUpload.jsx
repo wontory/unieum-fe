@@ -21,12 +21,8 @@ const FileUpload = () => {
 
   const handleUpload = () => {
     const fileList = files.map((fileItem) => fileItem.file);
-
     const formData = new FormData();
     formData.append("pdf", fileList);
-
-    console.log(fileList);
-    console.log(formData);
 
     testApi.postPdf(formData);
   };
@@ -45,7 +41,7 @@ const FileUpload = () => {
         disabled={!ctx.isSignedIn}
       />
       <button className="btn btn-primary" onClick={handleUpload}>
-        파일 업로드
+        문제 생성
       </button>
     </>
   );
