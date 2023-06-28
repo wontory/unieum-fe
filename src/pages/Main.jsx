@@ -15,6 +15,30 @@ const Main = () => {
     { name: "텍스트 직접 입력", content: <TextUpload /> },
   ];
 
+  const featureArr = [
+    {
+      badge: "HOW",
+      title: "교수님이 주신 PDF, 그것만 있으면 됩니다!",
+      content:
+        "시험의 자료가 될 PDF 혹은 텍스트만 입력하면 AI가 자동으로 예상 문제를 만들어 드려요.",
+      img: Feat1,
+    },
+    {
+      badge: "WHO",
+      title: "내일 모레 시험인 당신...",
+      content:
+        "예상 문제를 만들고 풀기는 커녕 PDF 읽을 시간도 없다고요? 잘 찾아오셨습니다! 유니음이 지금 바로 문제를 만들어 드릴게요.",
+      img: Feat2,
+    },
+    {
+      badge: "WHERE",
+      title: "이제 언제 어디서나 문제를 풀어봐요~",
+      content:
+        "등교길, 집에서, 카페에서, 어디서든 문제를 풀어볼 수 있어요. 유니음이는 당신의 시험을 응원합니다!",
+      img: Feat3,
+    },
+  ];
+
   return (
     <div className="flex flex-col max-w-[1200px] w-full gap-6">
       <div className="flex justify-center">
@@ -42,35 +66,14 @@ const Main = () => {
       </div>
       {tabArr[tabIndex].content}
       <div className="flex flex-col gap-3 md:flex-row justify-between">
-        <FeatureCard>
-          <div className="badge badge-primary badge-lg">HOW</div>
-          <h2 className="card-title">
-            교수님이 주신 PDF, 그것만 있으면 됩니다!
-          </h2>
-          <p>
-            시험의 자료가 될 PDF 혹은 텍스트만 입력하면 AI가 자동으로 예상
-            문제를 만들어 드려요.
-          </p>
-          <img src={Feat1} className="w-[170px] h-[201px]" />
-        </FeatureCard>
-        <FeatureCard>
-          <div className="badge badge-primary badge-lg">WHO</div>
-          <h2 className="card-title">내일 모레 시험인 당신...</h2>
-          <p>
-            예상 문제를 만들고 풀기는 커녕 PDF 읽을 시간도 없다고요? 잘
-            찾아오셨습니다! 유니음이 지금 바로 문제를 만들어 드릴게요.
-          </p>
-          <img src={Feat2} className="w-[170px] h-[201px]" />
-        </FeatureCard>
-        <FeatureCard>
-          <div className="badge badge-primary badge-lg">WHERE</div>
-          <h2 className="card-title">이제 언제 어디서나 문제를 풀어봐요~</h2>
-          <p>
-            등굣길, 하굣길, 집 등등... 원하면 어디에서나 유니음을 통해 시험 예상
-            문제를 만들고 풀어볼 수 있어요.
-          </p>
-          <img src={Feat3} className="w-[170px] h-[201px]" />
-        </FeatureCard>
+        {featureArr.map((feature, index) => (
+          <FeatureCard>
+            <div className="badge badge-primary badge-lg">{feature.badge}</div>
+            <h2 className="card-title">{feature.title}</h2>
+            <p>{feature.content}</p>
+            <img src={feature.img} className="w-[170px] h-[201px]" />
+          </FeatureCard>
+        ))}
       </div>
     </div>
   );
