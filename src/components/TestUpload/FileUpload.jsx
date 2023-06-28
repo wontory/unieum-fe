@@ -19,6 +19,13 @@ const FileUpload = () => {
 
   const [files, setFiles] = useState([]);
 
+  const handleUpload = () => {
+    const formData = new FormData();
+    formData.append("pdf", files[0].file);
+
+    testApi.postPdf(formData);
+  };
+
   return (
     <>
       <FilePond
@@ -29,16 +36,10 @@ const FileUpload = () => {
         allowFileTypeValidation={true}
         acceptedFileTypes="application/pdf"
         labelIdle='<span class="filepond--label-action">컴퓨터에서 파일 업로드</span> 또는 여기에 파일을 드롭!'
-        server={{
-          process: {
-            url: "https://develop.unieum.kr:4000/test-generation/upload/pdf",
-            method: "POST",
-            withCredentials: true,
-          },
-        }}
         credits={false}
         disabled={!ctx.isSignedIn}
       />
+      <button className="btn btn-primary" onClick={handleUpload}></button>
     </>
   );
 };
