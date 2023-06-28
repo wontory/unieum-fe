@@ -19,9 +19,9 @@ const FileUpload = () => {
 
   const [files, setFiles] = useState([]);
 
-  const upload = async (file) => {
+  const upload = async () => {
     const formData = new FormData();
-    formData.append("pdf", file);
+    formData.append("pdf", files);
 
     const response = await testApi.postPdf(formData);
 
@@ -43,10 +43,9 @@ const FileUpload = () => {
       allowMultiple={true}
       allowFileTypeValidation={true}
       acceptedFileTypes={["application/pdf"]}
-      instantUpload={true}
       storeAsFile={true}
       server={{
-        process: (file) => upload(file),
+        process: () => upload(),
       }}
       labelIdle='<span class="filepond--label-action">컴퓨터에서 파일 업로드</span> 또는 여기에 파일을 드롭!'
       credits={false}
