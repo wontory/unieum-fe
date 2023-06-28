@@ -20,6 +20,8 @@ const FileUpload = () => {
   const [files, setFiles] = useState([]);
 
   const handleUpload = () => {
+    console.log(files);
+
     const formData = new FormData();
     formData.append("pdf", files);
 
