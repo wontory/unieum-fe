@@ -14,7 +14,7 @@ const TextUpload = () => {
   };
 
   const upload = () => {
-    testApi.postText(text.current.value);
+    testApi.postText(text);
   };
 
   return (
