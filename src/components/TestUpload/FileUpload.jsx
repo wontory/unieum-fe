@@ -20,10 +20,10 @@ const FileUpload = () => {
   const [files, setFiles] = useState([]);
 
   const handleUpload = () => {
-    console.log(files);
+    const fileList = files.map((fileItem) => fileItem.file);
 
     const formData = new FormData();
-    formData.append("pdf", files);
+    formData.append("pdf", fileList);
 
     testApi.postPdf(formData);
   };
