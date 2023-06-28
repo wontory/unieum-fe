@@ -35,7 +35,6 @@ const FileUpload = () => {
             url: "https://develop.unieum.kr:4000/test-generation/upload/pdf",
             method: "POST",
             withCredentials: true,
-            headers: { "Content-Type": "multipart/form-data" },
           },
           // headers: {
           //   "Content-Type": "multipart/form-data",
