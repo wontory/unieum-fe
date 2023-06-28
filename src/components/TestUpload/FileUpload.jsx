@@ -39,7 +39,9 @@ const FileUpload = () => {
         credits={false}
         disabled={!ctx.isSignedIn}
       />
-      <button className="btn btn-primary" onClick={handleUpload}></button>
+      <button className="btn btn-primary" onClick={handleUpload}>
+        파일 업로드
+      </button>
     </>
   );
 };
