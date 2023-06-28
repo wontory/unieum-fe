@@ -34,7 +34,7 @@ const My = () => {
               <h2 className="card-title">오류</h2>
               <p>생성된 문제가 없습니다!</p>
               <div className="card-actions">
-                <Link className="btn btn-primary w-full" to="">
+                <Link className="btn btn-primary w-full" to="/">
                   문제 생성하러 가기
                 </Link>
               </div>

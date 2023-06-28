@@ -9,13 +9,8 @@ const TextUpload = () => {
 
   const text = useRef();
 
-  const upload = async () => {
-    const response = await testApi.postText(text.current.value);
-
-    localStorage.setItem(
-      "testList",
-      JSON.stringify(response.data.data.testList)
-    );
+  const upload = () => {
+    testApi.postText(text.current.value);
   };
 
   return (

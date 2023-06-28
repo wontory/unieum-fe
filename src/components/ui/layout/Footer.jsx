@@ -16,7 +16,7 @@ const Footer = () => {
           </Link>
           <br />
           Copyright ©{" "}
-          <Link className="link link-hover" to="">
+          <Link className="link link-hover" to="/">
             Apis
           </Link>{" "}
           {new Date().getFullYear()}

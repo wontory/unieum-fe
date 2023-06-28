@@ -19,8 +19,8 @@ const TestList = ({ testList }) => {
     }
   };
 
-  const downloadPdf = async (testGenerationId, withAnswers) => {
-    const res = await testApi.getTest(testGenerationId);
+  const downloadPdf = (testGenerationId, withAnswers) => {
+    const res = testApi.getTest(testGenerationId);
     const testList = res.data.data.testList.map((e) => JSON.parse(e));
 
     const question_pdf = generatePdf(testList, withAnswers);

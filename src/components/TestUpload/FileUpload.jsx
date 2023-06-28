@@ -21,7 +21,6 @@ const FileUpload = () => {
 
   const handleUpload = () => {
     const formData = new FormData();
-
     files.map((file) => formData.append("pdf", file.file));
 
     testApi.postPdf(formData);

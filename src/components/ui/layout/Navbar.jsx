@@ -24,7 +24,7 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <Link to="">업로드</Link>
+              <Link to="/">업로드</Link>
             </li>
             <li>
               <Link to="my">복습</Link>
@@ -33,12 +33,12 @@ const Navbar = () => {
         </div>
       </div>
       <div className="navbar-center">
-        <Link className="btn btn-ghost normal-case text-xl" to="">
+        <Link className="btn btn-ghost normal-case text-xl" to="/">
           <Logo width="48" />
         </Link>
       </div>
       <div className="navbar-end gap-2">
-        <Link className="btn btn-ghost hidden lg:flex" to="">
+        <Link className="btn btn-ghost hidden lg:flex" to="/">
           업로드
         </Link>
         <Link className="btn btn-ghost hidden lg:flex" to="my">
