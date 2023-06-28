@@ -39,7 +39,11 @@ const FileUpload = () => {
         credits={false}
         disabled={!ctx.isSignedIn}
       />
-      <button className="btn btn-primary" onClick={handleUpload}>
+      <button
+        className="btn btn-primary"
+        onClick={handleUpload}
+        disabled={files.length === 0}
+      >
         문제 생성
       </button>
     </>
