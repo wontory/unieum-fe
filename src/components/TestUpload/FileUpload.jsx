@@ -33,7 +33,7 @@ const FileUpload = () => {
         server={{
           url: "https://develop.unieum.kr:4000",
           process: {
-            url: "test-generation/upload/pdf",
+            url: "./test-generation/upload/pdf",
             method: "POST",
             withCredentials: true,
             headers: { "Content-Type": "multipart/form-data" },
