@@ -19,24 +19,6 @@ const FileUpload = () => {
 
   const [files, setFiles] = useState([]);
 
-  const upload = async () => {
-    const formData = new FormData();
-    formData.append("pdf", files);
-
-    console.log(formData);
-
-    const response = await testApi.postPdf(formData);
-
-    localStorage.setItem(
-      "testGenerationId",
-      response.data.data.testGenerationId
-    );
-    localStorage.setItem(
-      "testList",
-      JSON.stringify(response.data.data.testList)
-    );
-  };
-
   return (
     <>
       <FilePond
@@ -47,12 +29,12 @@ const FileUpload = () => {
         allowFileTypeValidation={true}
         acceptedFileTypes={["application/pdf"]}
         labelIdle='<span class="filepond--label-action">컴퓨터에서 파일 업로드</span> 또는 여기에 파일을 드롭!'
+        server={() => {
+          testApi.postPdf(files);
+        }}
         credits={false}
         disabled={!ctx.isSignedIn}
       />
-      <button className="btn btn-primary" onClick={upload}>
-        파일 업로드
-      </button>
     </>
   );
 };
