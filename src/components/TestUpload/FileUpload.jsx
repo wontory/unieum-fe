@@ -19,11 +19,11 @@ const FileUpload = () => {
 
   const [files, setFiles] = useState([]);
 
-  const handleUpload = () => {
+  const handleUpload = async () => {
     const formData = new FormData();
     files.map((file) => formData.append("pdf", file.file));
 
-    testApi.postPdf(formData);
+    await testApi.postPdf(formData);
   };
 
   return (

@@ -13,8 +13,8 @@ const TextUpload = () => {
     setText(event.target.value);
   };
 
-  const upload = () => {
-    testApi.postText(text);
+  const upload = async () => {
+    await testApi.postText(text);
   };
 
   return (
