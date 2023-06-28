@@ -29,10 +29,7 @@ const FileUpload = () => {
         allowFileTypeValidation={true}
         acceptedFileTypes="application/pdf"
         labelIdle='<span class="filepond--label-action">컴퓨터에서 파일 업로드</span> 또는 여기에 파일을 드롭!'
-        server={() => {
-          testApi.postPdf(files);
-        }}
-        instantUpload={true}
+        server="https://develop.unieum.kr:4000/upload/pdf"
         credits={false}
         disabled={!ctx.isSignedIn}
       />
