@@ -33,9 +33,10 @@ PnP, Zero-Install
   - utils: PDF 라이브러리 관련
 
 ## UI
-|Page1|Page2|Page3|
+|Main|My|Quiz|
 |---|---|---|
 ||||
+|PrivacyPolicy|||
 
 ## APIs
 [Swagger UI](https://develop.unieum.kr:4000/api)
