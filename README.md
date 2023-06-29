@@ -36,7 +36,7 @@ PnP, Zero-Install
 |Main|My|Quiz|
 |---|---|---|
 ||||
-|PrivacyPolicy|||
+|PrivacyPolicy|GenerateComplete|NotFound|
 
 ## APIs
 [Swagger UI](https://develop.unieum.kr:4000/api)
