@@ -1,6 +1,6 @@
 const FeatureCard = ({ children }) => {
   return (
-    <div className="card card-side bg-base-100 shadow-md w-full md:flex-col md:w-100 xl:flex-row">
+    <div className="card card-bordered card-side bg-base-100 w-full md:flex-col md:w-100 xl:flex-row">
       <div className="card-body p-6">
         {children[0]}
         {children[1]}

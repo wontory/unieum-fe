@@ -1,5 +1,5 @@
 const Card = ({ className, children }) => {
-  const classes = "card bg-base-100 shadow-md " + className;
+  const classes = "card card-bordered bg-base-100 " + className;
 
   return (
     <div className={classes}>
