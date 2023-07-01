@@ -8,9 +8,9 @@ import FilePondPluginPdfPreview from "filepond-plugin-pdf-preview";
 
 import { testApi } from "../../apis/testApi";
 
-import "../../styles/filepond.css";
 import "filepond/dist/filepond.min.css";
 import "filepond-plugin-pdf-preview/dist/filepond-plugin-pdf-preview.min.css";
+import "../../styles/filepond.css";
 
 registerPlugin(FilePondPluginFileValidateType, FilePondPluginPdfPreview);
 
@@ -37,15 +37,20 @@ const FileUpload = () => {
         acceptedFileTypes="application/pdf"
         labelIdle='<span class="filepond--label-action">컴퓨터에서 파일 업로드</span> 또는 여기에 파일을 드롭!'
         credits={false}
-        disabled={!ctx.isSignedIn}
       />
-      <button
-        className="btn btn-primary"
-        onClick={handleUpload}
-        disabled={files.length === 0}
-      >
-        문제 생성
-      </button>
+      <div className="card-actions justify-end px-6 py-4">
+        {ctx.isSignedIn ? (
+          <button
+            className="btn btn-primary"
+            onClick={handleUpload}
+            disabled={files.length === 0}
+          >
+            문제 생성
+          </button>
+        ) : (
+          <button className="btn btn-primary">로그인 후 이용하기</button>
+        )}
+      </div>
     </>
   );
 };

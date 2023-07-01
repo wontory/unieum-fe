@@ -13,26 +13,31 @@ const TextUpload = () => {
     setText(event.target.value);
   };
 
-  const upload = async () => {
+  const handleUpload = async () => {
     await testApi.postText(text);
   };
 
   return (
     <>
       <textarea
-        className="textarea textarea-bordered textarea-lg"
-        placeholder="문제를 생성하고 싶은 텍스트를 복사 붙여넣기 해주세요."
+        className="textarea textarea-ghost h-[220px]"
+        placeholder="문제를 생성하고 싶은 관련 텍스트를 입력해주세요."
         value={text}
         onChange={handleTextChange}
-        disabled={!ctx.isSignedIn}
       />
-      <button
-        className="btn btn-primary"
-        onClick={upload}
-        disabled={text.length === 0}
-      >
-        문제 생성
-      </button>
+      <div className="card-actions justify-end px-6 py-4">
+        {ctx.isSignedIn ? (
+          <button
+            className="btn btn-primary"
+            onClick={handleUpload}
+            disabled={text.length === 0}
+          >
+            문제 생성
+          </button>
+        ) : (
+          <button className="btn btn-primary">로그인 후 이용하기</button>
+        )}
+      </div>
     </>
   );
 };
