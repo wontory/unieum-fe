@@ -49,18 +49,13 @@ const Navbar = () => {
             로그아웃
           </button>
         ) : (
-          <div
-            className="tooltip tooltip-open tooltip-bottom"
-            data-tip="사용하려면 로그인!"
+          <Link
+            className="btn btn-accent"
+            to="https://develop.unieum.kr:4000/auth/kakao"
           >
-            <Link
-              className="btn btn-accent"
-              to="https://develop.unieum.kr:4000/auth/kakao"
-            >
-              <BsChatFill />
-              로그인
-            </Link>
-          </div>
+            <BsChatFill />
+            로그인
+          </Link>
         )}
       </div>
     </nav>
