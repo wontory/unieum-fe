@@ -1,5 +1,14 @@
+.filepond--root {
+  height: 220px;
+  margin-bottom: 0px;
+  display: flex;
+  align-items: center;
+}
+
 .filepond--panel-root {
-  border: 2px dashed #cdcdcd;
+  border: 2px dashed #bdbdbd;
+  border-radius: var(--rounded-box, 1rem);
+  background-color: #fafafa;
 }
 
 @media (min-width: 30em) {
@@ -10,6 +19,6 @@
 
 @media (min-width: 50em) {
   .filepond--item {
-    width: calc(25% - 0.5rem);
+    width: calc(15% - 0.5rem);
   }
 }
