@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 
 import AuthContext from "../../store/auth-context";
 
+import { Link } from "react-router-dom";
 import { FilePond, registerPlugin } from "react-filepond";
 import FilePondPluginFileValidateType from "filepond-plugin-file-validate-type";
 import FilePondPluginPdfPreview from "filepond-plugin-pdf-preview";
@@ -48,7 +49,12 @@ const FileUpload = () => {
             문제 생성
           </button>
         ) : (
-          <button className="btn btn-primary">로그인 후 이용하기</button>
+          <Link
+            className="btn btn-primary"
+            to="https://develop.unieum.kr:4000/auth/kakao"
+          >
+            로그인 후 이용하기
+          </Link>
         )}
       </div>
     </>

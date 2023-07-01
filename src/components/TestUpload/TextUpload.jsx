@@ -2,6 +2,8 @@ import { useContext, useState } from "react";
 
 import AuthContext from "../../store/auth-context";
 
+import { Link } from "react-router-dom";
+
 import { testApi } from "../../apis/testApi";
 
 const TextUpload = () => {
@@ -20,7 +22,7 @@ const TextUpload = () => {
   return (
     <>
       <textarea
-        className="textarea textarea-ghost h-[220px]"
+        className="textarea textarea-ghost h-[220px] rounded-2xl"
         placeholder="문제를 생성하고 싶은 관련 텍스트를 입력해주세요."
         value={text}
         onChange={handleTextChange}
@@ -35,7 +37,12 @@ const TextUpload = () => {
             문제 생성
           </button>
         ) : (
-          <button className="btn btn-primary">로그인 후 이용하기</button>
+          <Link
+            className="btn btn-primary"
+            to="https://develop.unieum.kr:4000/auth/kakao"
+          >
+            로그인 후 이용하기
+          </Link>
         )}
       </div>
     </>
