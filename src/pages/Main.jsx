@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import FeatureCard from "../components/ui/FeatureCard";
 import FileUpload from "../components/TestUpload/FileUpload";
 import TextUpload from "../components/TestUpload/TextUpload";
+import FeatureCard from "../components/ui/FeatureCard";
 import Feat1 from "../assets/images/feat_1.svg";
 import Feat2 from "../assets/images/feat_2.svg";
 import Feat3 from "../assets/images/feat_3.svg";
@@ -64,10 +64,12 @@ const Main = () => {
           </a>
         ))}
       </div>
-      {tabArr[tabIndex].content}
+      <div className="card card-bordered bg-base-100">
+        <div className="card-body p-0 gap-0">{tabArr[tabIndex].content}</div>
+      </div>
       <div className="flex flex-col gap-3 md:flex-row justify-between">
         {featureArr.map((feature, index) => (
-          <FeatureCard>
+          <FeatureCard key={"feature" + index}>
             <div className="badge badge-primary badge-lg">{feature.badge}</div>
             <h2 className="card-title">{feature.title}</h2>
             <p>{feature.content}</p>
