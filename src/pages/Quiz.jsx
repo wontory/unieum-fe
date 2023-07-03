@@ -1,22 +1,19 @@
 import { useLayoutEffect } from "react";
 
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { testApi } from "../apis/testApi";
 
 const Quiz = () => {
-  const navigate = useNavigate();
-
   const { id } = useParams();
 
+  const [questions, setQuestions] = useState([]);
+
   useLayoutEffect(() => {
-    try {
-      testApi.getTest(id).then((res) => {
-        console.log(res.data.data.testList);
-      });
-    } catch (err) {
-      navigate("/404");
-    }
+    testApi.getTest(id).then((res) => {
+      setQuestions(res.data.data.testList.map((e) => JSON.parse(e)));
+    });
+    console.log(questions);
   });
 };
 
