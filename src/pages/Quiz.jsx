@@ -21,6 +21,20 @@ const Quiz = () => {
     });
   }, [id]);
 
+  const handleNextQuestion = () => {
+    if (currentIndex === questions.length - 1) {
+      alert("퀴즈가 끝났습니다!");
+      navigate("/my");
+    } else {
+      setCurrentIndex((curIndex) => curIndex + 1);
+      setShowAnswer(false);
+    }
+  };
+
+  const handleShowAnswer = () => {
+    setShowAnswer(true);
+  };
+
   return (
     <Card className="max-w-[1200px] w-full">
       <progress
@@ -51,23 +65,12 @@ const Quiz = () => {
         {showAnswer ? (
           <button
             className="btn btn-primary w-full"
-            onClick={() => {
-              if (currentIndex === questions.length - 1) {
-                alert("퀴즈가 끝났습니다!");
-                navigate("/my");
-              } else {
-                setCurrentIndex((curIndex) => curIndex + 1);
-                setShowAnswer(false);
-              }
-            }}
+            onClick={handleNextQuestion}
           >
             다음 문제
           </button>
         ) : (
-          <button
-            className="btn btn-primary w-full"
-            onClick={() => setShowAnswer(true)}
-          >
+          <button className="btn btn-primary w-full" onClick={handleShowAnswer}>
             정답 보기
           </button>
         )}
