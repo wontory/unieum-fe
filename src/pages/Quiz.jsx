@@ -24,6 +24,7 @@ const Quiz = () => {
     <Card className="max-w-[1200px] w-full">
       <progress className="progress progress-primary" value="20" max="100" />
       <div className="card-title">
+        {questions[currentIndex] && console.log(questions[currentIndex])}
         {questions[currentIndex] && questions[currentIndex].question}
       </div>
       <div>
