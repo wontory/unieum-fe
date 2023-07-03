@@ -21,13 +21,6 @@ const Quiz = () => {
     });
   }, [id]);
 
-  useEffect(() => {
-    if (currentIndex > questions.length - 1) {
-      alert("퀴즈가 끝났습니다!");
-      navigate("/my");
-    }
-  }, [currentIndex, questions]);
-
   return (
     <Card className="max-w-[1200px] w-full">
       <progress className="progress progress-primary" value="20" max="100" />
@@ -55,8 +48,13 @@ const Quiz = () => {
           <button
             className="btn btn-primary w-full"
             onClick={() => {
-              setCurrentIndex((curIndex) => curIndex + 1);
-              setShowAnswer(false);
+              if (currentIndex === questions.length - 1) {
+                alert("퀴즈가 끝났습니다!");
+                navigate("/my");
+              } else {
+                setCurrentIndex((curIndex) => curIndex + 1);
+                setShowAnswer(false);
+              }
             }}
           >
             다음 문제
