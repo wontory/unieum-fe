@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import { userApi } from "../apis/userApi";
 import { authApi } from "../apis/authApi";
@@ -10,7 +10,7 @@ const AuthContext = React.createContext({
 export const AuthContextProvider = ({ children }) => {
   const [isSignedIn, setIsSignedIn] = useState(false);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (isSignedIn === false) {
       userApi
         .getIsSignedIn()

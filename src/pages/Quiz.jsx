@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect } from "react";
+import { useState, useEffect } from "react";
 
 import { useParams } from "react-router-dom";
 
@@ -13,7 +13,7 @@ const Quiz = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     testApi.getTest(id).then((res) => {
       const questionList = res.data.data.testList.map((e) => JSON.parse(e));
       setQuestions(questionList.sort(() => Math.random() - 0.5));
@@ -24,7 +24,6 @@ const Quiz = () => {
     <Card className="max-w-[1200px] w-full">
       <progress className="progress progress-primary" value="20" max="100" />
       <div className="card-title">
-        {questions[currentIndex] && console.log(questions[currentIndex])}
         {questions[currentIndex] && questions[currentIndex].question}
       </div>
       <div>
@@ -47,20 +46,14 @@ const Quiz = () => {
         {showAnswer ? (
           <button
             className="btn btn-primary w-full"
-            onClick={() => {
-              setCurrentIndex((curIndex) => {
-                curIndex + 1;
-              });
-            }}
+            onClick={() => setCurrentIndex((curIndex) => curIndex + 1)}
           >
             다음 문제
           </button>
         ) : (
           <button
             className="btn btn-primary w-full"
-            onClick={() => {
-              setShowAnswer(true);
-            }}
+            onClick={() => setShowAnswer(true)}
           >
             정답 보기
           </button>
