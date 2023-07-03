@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 
-import AuthContext from "../../store/auth-context";
+import AuthContext from "../../stores/auth-context";
 
 import { Link } from "react-router-dom";
 import { FilePond, registerPlugin } from "react-filepond";
