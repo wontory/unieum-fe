@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { testApi } from "../apis/testApi";
 
 import Card from "../components/ui/Card";
 
 const Quiz = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
 
   const [questions, setQuestions] = useState([]);
@@ -18,7 +19,14 @@ const Quiz = () => {
       const questionList = res.data.data.testList.map((e) => JSON.parse(e));
       setQuestions(questionList.sort(() => Math.random() - 0.5));
     });
-  }, []);
+  }, [id]);
+
+  useEffect(() => {
+    if (currentIndex > questions.length - 1) {
+      alert("퀴즈가 끝났습니다!");
+      navigate("/my");
+    }
+  }, [currentIndex, questions]);
 
   return (
     <Card className="max-w-[1200px] w-full">
