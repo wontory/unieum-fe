@@ -23,7 +23,9 @@ const Quiz = () => {
   return (
     <Card className="max-w-[1200px] w-full">
       <progress className="progress progress-primary" value="20" max="100" />
-      <div className="card-title">{questions[currentIndex].question}</div>
+      <div className="card-title">
+        {questions[currentIndex] && questions[currentIndex].question}
+      </div>
       <div>
         <textarea
           className="textarea textarea-bordered w-full"
@@ -34,7 +36,9 @@ const Quiz = () => {
         <div>
           <p>AI 정답 (정확하지 않을 수 있습니다!)</p>
           <div className="alert">
-            <span>{questions[currentIndex].answer}</span>
+            <span>
+              {questions[currentIndex] && questions[currentIndex].answer}
+            </span>
           </div>
         </div>
       )}
