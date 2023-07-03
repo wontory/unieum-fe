@@ -46,7 +46,10 @@ const Quiz = () => {
         {showAnswer ? (
           <button
             className="btn btn-primary w-full"
-            onClick={() => setCurrentIndex((curIndex) => curIndex + 1)}
+            onClick={() => {
+              setCurrentIndex((curIndex) => curIndex + 1);
+              setShowAnswer(false);
+            }}
           >
             다음 문제
           </button>
