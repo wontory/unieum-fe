@@ -1,8 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
 import { testApi } from "../../apis/testApi";
 
 import generatePdf from "../../utils/pdfUtils";
 
 const TestList = ({ testList }) => {
+  const navigate = useNavigate();
+
   const formatDate = (test) => {
     const currentTime = new Date();
     const testCreatedAt = new Date(test.testCreateAt);
@@ -63,7 +67,10 @@ const TestList = ({ testList }) => {
                 </div>
               </td>
               <td>
-                <button className="btn btn-primary btn-sm">
+                <button
+                  className="btn btn-primary btn-sm"
+                  onClick={() => navigate(`/quiz/${test.testGenerationId}`)}
+                >
                   바로 풀어보기
                 </button>
               </td>
