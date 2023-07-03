@@ -15,9 +15,9 @@ const TestList = ({ testList }) => {
     );
 
     if (timeDifference < 60) {
-      return `${timeDifference} minutes ago`;
+      return `${timeDifference}분 전`;
     } else if (timeDifference < 1440) {
-      return `${Math.floor(timeDifference / 60)} hours ago`;
+      return `${Math.floor(timeDifference / 60)}시간 전`;
     } else {
       return testCreatedAt.toLocaleString();
     }
