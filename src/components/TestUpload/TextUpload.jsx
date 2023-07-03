@@ -22,7 +22,7 @@ const TextUpload = () => {
   return (
     <>
       <textarea
-        className="textarea textarea-ghost h-[220px] rounded-2xl"
+        className="textarea textarea-ghost h-[220px] rounded-2xl rounded-b-none"
         placeholder="문제를 생성하고 싶은 관련 텍스트를 입력해주세요."
         value={text}
         onChange={handleTextChange}

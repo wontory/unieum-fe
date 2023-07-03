@@ -8,6 +8,8 @@
 .filepond--panel-root {
   border: 2px dashed #bdbdbd;
   border-radius: var(--rounded-box, 1rem);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   background-color: #fafafa;
 }
 
