@@ -9,6 +9,8 @@ import FilePondPluginPdfPreview from "filepond-plugin-pdf-preview";
 
 import { testApi } from "../../apis/testApi";
 
+import ModalPortal from "../UI/Modal/ModalPortal";
+import LoadingModal from "../UI/Modal/LoadingModal";
 import "filepond/dist/filepond.min.css";
 import "filepond-plugin-pdf-preview/dist/filepond-plugin-pdf-preview.min.css";
 import "../../styles/filepond.css";
@@ -19,8 +21,10 @@ const FileUpload = () => {
   const ctx = useContext(AuthContext);
 
   const [files, setFiles] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleUpload = async () => {
+    setIsLoading(true);
     const formData = new FormData();
     files.map((file) => formData.append("pdf", file.file));
 
@@ -57,6 +61,11 @@ const FileUpload = () => {
           </Link>
         )}
       </div>
+      {isLoading && (
+        <ModalPortal>
+          <LoadingModal />
+        </ModalPortal>
+      )}
     </>
   );
 };
