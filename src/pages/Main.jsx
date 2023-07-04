@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import FileUpload from "../components/TestUpload/FileUpload";
 import TextUpload from "../components/TestUpload/TextUpload";
-import FeatureCard from "../components/UI/FeatureCard";
+import FeatureCard from "../components/UI/Card/FeatureCard";
 import Feat1 from "../assets/images/feat_1.svg";
 import Feat2 from "../assets/images/feat_2.svg";
 import Feat3 from "../assets/images/feat_3.svg";

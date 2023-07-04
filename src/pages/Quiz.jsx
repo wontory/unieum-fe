@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import { testApi } from "../apis/testApi";
 
-import Card from "../components/UI/Card";
+import Card from "../components/UI/Card/Card";
 
 const Quiz = () => {
   const navigate = useNavigate();
