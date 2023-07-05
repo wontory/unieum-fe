@@ -13,14 +13,12 @@ const TextUpload = () => {
   const ctx = useContext(AuthContext);
 
   const [text, setText] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
 
   const handleTextChange = (event) => {
     setText(event.target.value);
   };
 
   const handleUpload = async () => {
-    setIsLoading(true);
     window.loading_modal.showModal();
 
     await testApi.postText(text);
@@ -52,11 +50,9 @@ const TextUpload = () => {
           </Link>
         )}
       </div>
-      {isLoading && (
-        <ModalPortal>
-          <LoadingModal />
-        </ModalPortal>
-      )}
+      <ModalPortal>
+        <LoadingModal />
+      </ModalPortal>
     </>
   );
 };

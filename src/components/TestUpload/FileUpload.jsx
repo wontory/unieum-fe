@@ -21,13 +21,11 @@ const FileUpload = () => {
   const ctx = useContext(AuthContext);
 
   const [files, setFiles] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
 
   const handleUpload = async () => {
     const formData = new FormData();
     files.map((file) => formData.append("pdf", file.file));
 
-    setIsLoading(true);
     window.loading_modal.showModal();
 
     await testApi.postPdf(formData);
@@ -63,11 +61,9 @@ const FileUpload = () => {
           </Link>
         )}
       </div>
-      {isLoading && (
-        <ModalPortal>
-          <LoadingModal />
-        </ModalPortal>
-      )}
+      <ModalPortal>
+        <LoadingModal />
+      </ModalPortal>
     </>
   );
 };
