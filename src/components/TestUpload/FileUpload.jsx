@@ -33,7 +33,9 @@ const FileUpload = () => {
       formData.append("targetLanguage", "korean");
       files.map((file) => formData.append("pdf", file.file));
 
-      await testApi.postPdf(formData);
+      const res = await testApi.postPdf(formData);
+
+      console.log(res);
     } catch (err) {
       alert(`문제 생성에 실패했습니다. (${err?.response?.data.message})`);
       window.loading_modal.closeModal();
