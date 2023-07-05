@@ -16,9 +16,9 @@ const Navbar = () => {
     <nav className="navbar max-w-[1200px] w-full">
       <div className="navbar-start">
         <div className="dropdown">
-          <button tabIndex={0} className="btn btn-square btn-ghost lg:hidden">
+          <label tabIndex={0} className="btn btn-square btn-ghost lg:hidden">
             <CgMenuLeftAlt size={24} />
-          </button>
+          </label>
           <ul
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
