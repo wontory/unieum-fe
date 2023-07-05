@@ -47,7 +47,10 @@ const FileUpload = () => {
         {ctx.isSignedIn ? (
           <button
             className="btn btn-primary"
-            onClick={handleUpload}
+            onClick={() => {
+              window.loading_modal.showModal();
+              handleUpload();
+            }}
             disabled={files.length === 0}
           >
             문제 생성

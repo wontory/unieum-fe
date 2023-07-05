@@ -31,7 +31,10 @@ const TextUpload = () => {
         {ctx.isSignedIn ? (
           <button
             className="btn btn-primary"
-            onClick={handleUpload}
+            onClick={() => {
+              window.loading_modal.showModal();
+              handleUpload();
+            }}
             disabled={text.length === 0}
           >
             문제 생성
