@@ -24,9 +24,11 @@ const FileUpload = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleUpload = async () => {
-    setIsLoading(true);
     const formData = new FormData();
     files.map((file) => formData.append("pdf", file.file));
+
+    setIsLoading(true);
+    window.loading_modal.showModal();
 
     await testApi.postPdf(formData);
   };
@@ -47,10 +49,7 @@ const FileUpload = () => {
         {ctx.isSignedIn ? (
           <button
             className="btn btn-primary"
-            onClick={() => {
-              window.loading_modal.showModal();
-              handleUpload();
-            }}
+            onClick={handleUpload}
             disabled={files.length === 0}
           >
             문제 생성

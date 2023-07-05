@@ -6,16 +6,23 @@ import { Link } from "react-router-dom";
 
 import { testApi } from "../../apis/testApi";
 
+import ModalPortal from "../UI/Modal/ModalPortal";
+import LoadingModal from "../UI/Modal/LoadingModal";
+
 const TextUpload = () => {
   const ctx = useContext(AuthContext);
 
   const [text, setText] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleTextChange = (event) => {
     setText(event.target.value);
   };
 
   const handleUpload = async () => {
+    setIsLoading(true);
+    window.loading_modal.showModal();
+
     await testApi.postText(text);
   };
 
@@ -31,10 +38,7 @@ const TextUpload = () => {
         {ctx.isSignedIn ? (
           <button
             className="btn btn-primary"
-            onClick={() => {
-              window.loading_modal.showModal();
-              handleUpload();
-            }}
+            onClick={handleUpload}
             disabled={text.length === 0}
           >
             문제 생성
@@ -48,6 +52,11 @@ const TextUpload = () => {
           </Link>
         )}
       </div>
+      {isLoading && (
+        <ModalPortal>
+          <LoadingModal />
+        </ModalPortal>
+      )}
     </>
   );
 };
