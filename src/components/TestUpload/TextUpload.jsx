@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 
 import AuthContext from "../../stores/auth-context";
 
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import { testApi } from "../../apis/testApi";
 
@@ -10,6 +10,8 @@ import ModalPortal from "../UI/Modal/ModalPortal";
 import LoadingModal from "../UI/Modal/LoadingModal";
 
 const TextUpload = () => {
+  const navigate = useNavigate();
+
   const ctx = useContext(AuthContext);
 
   const [text, setText] = useState("");
@@ -21,7 +23,15 @@ const TextUpload = () => {
   const handleUpload = async () => {
     window.loading_modal.showModal();
 
-    await testApi.postText(text);
+    try {
+      await testApi.postText(text);
+    } catch (err) {
+      alert(`문제 생성에 실패했습니다. (${err?.response?.data.message})`);
+      window.loading_modal.closeModal();
+      window.location.reload();
+    }
+
+    navigate("/done");
   };
 
   return (

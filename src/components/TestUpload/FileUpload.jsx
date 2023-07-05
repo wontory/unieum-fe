@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 
 import AuthContext from "../../stores/auth-context";
 
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { FilePond, registerPlugin } from "react-filepond";
 import FilePondPluginFileValidateType from "filepond-plugin-file-validate-type";
 import FilePondPluginPdfPreview from "filepond-plugin-pdf-preview";
@@ -18,19 +18,29 @@ import "../../styles/filepond.css";
 registerPlugin(FilePondPluginFileValidateType, FilePondPluginPdfPreview);
 
 const FileUpload = () => {
+  const navigate = useNavigate();
+
   const ctx = useContext(AuthContext);
 
   const [files, setFiles] = useState([]);
 
   const handleUpload = async () => {
-    const formData = new FormData();
-    formData.append("targetTestFormat", "short-answer");
-    formData.append("targetLanguage", "korean");
-    files.map((file) => formData.append("pdf", file.file));
-
     window.loading_modal.showModal();
 
-    await testApi.postPdf(formData);
+    try {
+      const formData = new FormData();
+      formData.append("targetTestFormat", "short-answer");
+      formData.append("targetLanguage", "korean");
+      files.map((file) => formData.append("pdf", file.file));
+
+      await testApi.postPdf(formData);
+    } catch (err) {
+      alert(`문제 생성에 실패했습니다. (${err?.response?.data.message})`);
+      window.loading_modal.closeModal();
+      window.location.reload();
+    }
+
+    navigate("/done");
   };
 
   return (
