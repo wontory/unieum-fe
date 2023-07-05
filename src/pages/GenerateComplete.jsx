@@ -1,8 +1,8 @@
 import { useParams, Link } from "react-router-dom";
 
-import { testApi } from "../../apis/testApi";
+import { testApi } from "../apis/testApi";
 
-import generatePdf from "../../utils/pdfUtils";
+import generatePdf from "../utils/pdfUtils";
 
 import img_study from "../assets/images/img_study.png";
 
