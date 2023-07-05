@@ -21,17 +21,20 @@ const TextUpload = () => {
   };
 
   const handleUpload = async () => {
+    let testGenerationId;
+
     window.loading_modal.showModal();
 
     try {
-      await testApi.postText(text);
+      const res = await testApi.postText(text);
+      testGenerationId = res.data.data.testGenerationId;
     } catch (err) {
       alert(`문제 생성에 실패했습니다. (${err?.response?.data.message})`);
       window.loading_modal.closeModal();
       window.location.reload();
     }
 
-    navigate("/done");
+    navigate(`/done/${testGenerationId}`);
   };
 
   return (
@@ -61,7 +64,7 @@ const TextUpload = () => {
         )}
       </div>
       <ModalPortal>
-        <LoadingModal />
+        <LoadingModal>열심히 문제 만드는 중...</LoadingModal>
       </ModalPortal>
     </>
   );

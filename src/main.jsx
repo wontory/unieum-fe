@@ -23,7 +23,7 @@ const router = createBrowserRouter([
       { path: "/my", element: <My /> },
       { path: "/quiz/:id", element: <Quiz /> },
       { path: "/privacy", element: <PrivacyPolicy /> },
-      { path: "/done", element: <GenerateComplete /> },
+      { path: "/done/:id", element: <GenerateComplete /> },
       // 404
       { path: "/*", element: <NotFound /> },
     ],

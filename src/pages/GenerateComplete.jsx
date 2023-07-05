@@ -1,6 +1,23 @@
+import { useParams, Link } from "react-router-dom";
+
+import { testApi } from "../../apis/testApi";
+
+import generatePdf from "../../utils/pdfUtils";
+
 import img_study from "../assets/images/img_study.png";
 
 const GenerateComplete = () => {
+  const { id } = useParams();
+
+  const downloadPdf = async (testGenerationId, withAnswers) => {
+    const res = await testApi.getTest(testGenerationId);
+    const testList = res.data.data.testList.map((e) => JSON.parse(e));
+
+    const question_pdf = generatePdf(testList, withAnswers);
+    const fileName = withAnswers ? "정답지.pdf" : "문제지.pdf";
+    question_pdf.save(fileName);
+  };
+
   return (
     <div className="flex flex-col max-w-[1200px] w-full gap-6">
       <div className="flex justify-center">
@@ -14,8 +31,18 @@ const GenerateComplete = () => {
         </div>
       </div>
       <div className="flex justify-center gap-4">
-        <button className="btn btn-outline btn-primary btn-lg">문제 PDF</button>
-        <button className="btn btn-outline btn-primary btn-lg">정답 PDF</button>
+        <button
+          className="btn btn-outline btn-primary btn-lg"
+          onClick={() => downloadPdf(id, false)}
+        >
+          문제 PDF
+        </button>
+        <button
+          className="btn btn-outline btn-primary btn-lg"
+          onClick={() => downloadPdf(id, true)}
+        >
+          정답 PDF
+        </button>
       </div>
       <div className="flex justify-center">
         <div className="card card-side w-[800px] bg-base-100 shadow-md">
@@ -29,9 +56,12 @@ const GenerateComplete = () => {
               <br /> 만들어진 문제를 바로 풀어보세요!
             </p>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary btn-lg w-full">
+              <Link
+                className="btn btn-primary btn-lg w-full"
+                to={`/quiz/${id}`}
+              >
                 문제 풀이 시작!
-              </button>
+              </Link>
             </div>
           </div>
         </div>
