@@ -10,23 +10,28 @@ const userInstance = axios.create({
   withCredentials: true,
 });
 
-const getIsSignedIn = async () => {
+const getUser = async () => {
   try {
     return await userInstance.get(`${ROUTE}`);
   } catch (err) {
-    throw new Error("getIsSignedIn error");
+    throw new Error("getUser error");
   }
 };
 
-const postSurvey = async (data) => {
+const deleteUser = async () => {
+  return await authInstance.delete(`${ROUTE}`);
+};
+
+const postNps = async (data) => {
   try {
     return await userInstance.post(`${ROUTE}/nps`, data);
   } catch (err) {
-    throw new Error("postSurvey error");
+    throw new Error("postNps error");
   }
 };
 
 export const userApi = {
-  getIsSignedIn,
-  postSurvey,
+  getUser,
+  deleteUser,
+  postNps,
 };

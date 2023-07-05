@@ -18,12 +18,7 @@ const postSignOut = async () => {
   return await authInstance.post(`${ROUTE}/sign-out`);
 };
 
-const deleteWithdrawal = async () => {
-  return await authInstance.delete(`${ROUTE}`);
-};
-
 export const authApi = {
   postReissueAccess,
   postSignOut,
-  deleteWithdrawal,
 };

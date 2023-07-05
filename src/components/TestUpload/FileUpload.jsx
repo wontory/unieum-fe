@@ -24,6 +24,8 @@ const FileUpload = () => {
 
   const handleUpload = async () => {
     const formData = new FormData();
+    formData.append("targetTestFormat", "short-answer");
+    formData.append("targetLanguage", "korean");
     files.map((file) => formData.append("pdf", file.file));
 
     window.loading_modal.showModal();

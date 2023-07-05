@@ -19,7 +19,7 @@ const postPdf = async (formData) => {
 const postText = async (text) => {
   return await testInstance.post(
     `${ROUTE}/upload/text`,
-    { text },
+    { targetTestFormat: "short-answer", targetLanguage: "korean", text: text },
     {
       headers: { "Content-Type": "application/json" },
     }

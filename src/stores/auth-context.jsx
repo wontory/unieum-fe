@@ -13,7 +13,7 @@ export const AuthContextProvider = ({ children }) => {
   useEffect(() => {
     if (isSignedIn === false) {
       userApi
-        .getIsSignedIn()
+        .getUser()
         .then((res) => {
           setIsSignedIn(true);
         })
