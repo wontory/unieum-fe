@@ -4,9 +4,10 @@ import AuthContext from "../../../stores/auth-context";
 
 import { Link } from "react-router-dom";
 
-import { CgMenuLeftAlt } from "react-icons/cg";
+import { CgMenuRightAlt } from "react-icons/cg";
 import { BsChatFill } from "react-icons/bs";
 
+import { ReactComponent as Icon } from "../../../assets/images/unieum_icon.svg";
 import { ReactComponent as Logo } from "../../../assets/images/unieum_logo.svg";
 
 const Navbar = () => {
@@ -14,30 +15,13 @@ const Navbar = () => {
 
   return (
     <nav className="navbar max-w-[1200px] w-full">
-      <div className="navbar-start">
-        <div className="dropdown">
-          <label tabIndex={0} className="btn btn-square btn-ghost lg:hidden">
-            <CgMenuLeftAlt size={24} />
-          </label>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-          >
-            <li>
-              <Link to="/">업로드</Link>
-            </li>
-            <li>
-              <Link to="my">복습</Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className="navbar-center">
+      <div className="flex-1">
         <Link className="btn btn-ghost normal-case text-xl" to="/">
+          <Icon />
           <Logo width="48" />
         </Link>
       </div>
-      <div className="navbar-end gap-2">
+      <div className="flex-none gap-2">
         <Link className="btn btn-ghost hidden lg:flex" to="/">
           업로드
         </Link>
@@ -45,18 +29,43 @@ const Navbar = () => {
           복습
         </Link>
         {ctx.isSignedIn ? (
-          <button className="btn btn-ghost" onClick={ctx.onSignOut}>
+          <button
+            className="btn btn-ghost hidden lg:flex"
+            onClick={ctx.onSignOut}
+          >
             로그아웃
           </button>
         ) : (
           <Link
-            className="btn btn-accent"
+            className="btn btn-accent hidden lg:flex"
             to="https://develop.unieum.kr:4000/auth/kakao"
           >
             <BsChatFill />
             로그인
           </Link>
         )}
+        <details className="dropdown dropdown-end lg:hidden">
+          <summary className="btn btn-ghost btn-circle">
+            <CgMenuRightAlt size={24} />
+          </summary>
+          <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+            <li>
+              <Link to="/">업로드</Link>
+            </li>
+            <li>
+              <Link to="my">복습</Link>
+            </li>
+            {ctx.isSignedIn ? (
+              <li onClick={ctx.onSignOut}>로그아웃</li>
+            ) : (
+              <li>
+                <Link to="https://develop.unieum.kr:4000/auth/kakao">
+                  로그인
+                </Link>
+              </li>
+            )}
+          </ul>
+        </details>
       </div>
     </nav>
   );
