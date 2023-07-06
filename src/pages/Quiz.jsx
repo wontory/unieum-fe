@@ -4,8 +4,6 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import { testApi } from "../apis/testApi";
 
-import Card from "../components/UI/Card/Card";
-
 const Quiz = () => {
   const navigate = useNavigate();
   const { id } = useParams();
@@ -36,46 +34,44 @@ const Quiz = () => {
   };
 
   return (
-    <Card className="max-w-[1200px] w-full">
-      <progress
-        className="progress progress-primary"
-        value={currentIndex + 1}
-        max={questions.length}
-      />
-      <div className="card-title">
-        {questions[currentIndex] && questions[currentIndex].question}
-      </div>
-      <div>
+    <div
+      className="flex flex-col justify-between max-w-[1200px] w-full"
+      style={{ height: "calc(100vh - 160px)" }}
+    >
+      <div className="flex flex-col gap-4">
+        <progress
+          className="progress progress-primary"
+          value={currentIndex + 1}
+          max={questions.length}
+        />
+        <div className="card-title">
+          {questions[currentIndex] && questions[currentIndex].question}
+        </div>
         <textarea
           className="textarea textarea-bordered w-full"
           placeholder="정답을 입력해주세요!"
         />
-      </div>
-      {showAnswer && (
-        <div>
-          <p>AI 정답 (정확하지 않을 수 있습니다!)</p>
-          <div className="alert">
-            <span>
-              {questions[currentIndex] && questions[currentIndex].answer}
-            </span>
+        {showAnswer && (
+          <div className="flex flex-col gap-2">
+            <p>AI 정답 (정확하지 않을 수 있습니다!)</p>
+            <div className="alert">
+              <span>
+                {questions[currentIndex] && questions[currentIndex].answer}
+              </span>
+            </div>
           </div>
-        </div>
-      )}
-      <div className="card-actions">
-        {showAnswer ? (
-          <button
-            className="btn btn-primary w-full"
-            onClick={handleNextQuestion}
-          >
-            다음 문제
-          </button>
-        ) : (
-          <button className="btn btn-primary w-full" onClick={handleShowAnswer}>
-            정답 보기
-          </button>
         )}
       </div>
-    </Card>
+      {showAnswer ? (
+        <button className="btn btn-primary w-full" onClick={handleNextQuestion}>
+          다음 문제
+        </button>
+      ) : (
+        <button className="btn btn-primary w-full" onClick={handleShowAnswer}>
+          정답 보기
+        </button>
+      )}
+    </div>
   );
 };
 
