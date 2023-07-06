@@ -56,7 +56,9 @@ const Navbar = () => {
               <Link to="my">복습</Link>
             </li>
             {ctx.isSignedIn ? (
-              <li onClick={ctx.onSignOut}>로그아웃</li>
+              <li>
+                <a onClick={ctx.onSignOut}>로그아웃</a>
+              </li>
             ) : (
               <li>
                 <Link to="https://develop.unieum.kr:4000/auth/kakao">
