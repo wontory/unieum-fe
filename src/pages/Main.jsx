@@ -64,7 +64,7 @@ const Main = () => {
           </a>
         ))}
       </div>
-      <form className="form-control">{tabArr[tabIndex].content}</form>
+      <div className="form-control">{tabArr[tabIndex].content}</div>
       <div className="flex flex-col gap-3 md:flex-row justify-between">
         {featureArr.map((feature, index) => (
           <FeatureCard key={"feature" + index}>
