@@ -34,10 +34,4 @@ const StyledFilepondContainer = styled.div`
   }
 `;
 
-const FilepondContainer = ({ children, ...props }) => {
-  return (
-    <StyledFilepondContainer {...props}>{children}</StyledFilepondContainer>
-  );
-};
-
-export default FilepondContainer;
+export default StyledFilepondContainer;

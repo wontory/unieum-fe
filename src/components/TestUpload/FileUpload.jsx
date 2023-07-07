@@ -9,7 +9,7 @@ import FilePondPluginPdfPreview from "filepond-plugin-pdf-preview";
 
 import { testApi } from "../../apis/testApi";
 
-import FilepondContainer from "../../styles/StyledFilepondContainer";
+import StyledFilepondContainer from "../../styles/StyledFilepondContainer";
 import ModalPortal from "../UI/Modal/ModalPortal";
 import LoadingModal from "../UI/Modal/LoadingModal";
 import "filepond/dist/filepond.min.css";
@@ -50,7 +50,7 @@ const FileUpload = () => {
 
   return (
     <>
-      <FilepondContainer files={files}>
+      <StyledFilepondContainer files={files}>
         <FilePond
           name="files"
           files={files}
@@ -62,7 +62,7 @@ const FileUpload = () => {
           credits={false}
           disabled={!ctx.isSignedIn}
         />
-      </FilepondContainer>
+      </StyledFilepondContainer>
       <div className="card card-bordered rounded-t-none border-t-0 bg-base-100">
         <div className="card-body p-0 gap-0">
           <div className="card-actions justify-end px-6 py-4">
