@@ -17,8 +17,8 @@ const StyledFilepondContainer = styled.div`
   }
 
   .filepond--drop-label {
-    display: ${(props) => props.files.length > 0 && "none"};
-    height: ${(props) => props.files.length === 0 && "100%"};
+    display: ${({ files }) => files.length > 0 && "none"};
+    height: ${({ files }) => files.length === 0 && "100%"};
   }
 
   @media (min-width: 30em) {
@@ -34,4 +34,10 @@ const StyledFilepondContainer = styled.div`
   }
 `;
 
-export default StyledFilepondContainer;
+const FilepondContainer = ({ children, ...props }) => {
+  return (
+    <StyledFilepondContainer {...props}>{children}</StyledFilepondContainer>
+  );
+};
+
+export default FilepondContainer;

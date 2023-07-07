@@ -9,7 +9,7 @@ import FilePondPluginPdfPreview from "filepond-plugin-pdf-preview";
 
 import { testApi } from "../../apis/testApi";
 
-import StyledFilepondContainer from "../../styles/StyledFilepondContainer";
+import FilepondContainer from "../../styles/StyledFilepondContainer";
 import ModalPortal from "../UI/Modal/ModalPortal";
 import LoadingModal from "../UI/Modal/LoadingModal";
 import "filepond/dist/filepond.min.css";
@@ -41,9 +41,8 @@ const FileUpload = () => {
       testGenerationId = res.data.data.testGenerationId;
     } catch (err) {
       alert(`문제 생성에 실패했습니다. (${err?.response?.data.message})`);
-      console.log(err);
       window.loading_modal.closeModal();
-      // window.location.reload();
+      window.location.reload();
     }
 
     navigate(`/done/${testGenerationId}`);
@@ -51,7 +50,7 @@ const FileUpload = () => {
 
   return (
     <>
-      <StyledFilepondContainer files={files}>
+      <FilepondContainer files={files}>
         <FilePond
           name="files"
           files={files}
@@ -63,7 +62,7 @@ const FileUpload = () => {
           credits={false}
           disabled={!ctx.isSignedIn}
         />
-      </StyledFilepondContainer>
+      </FilepondContainer>
       <div className="card card-bordered rounded-t-none border-t-0 bg-base-100">
         <div className="card-body p-0 gap-0">
           <div className="card-actions justify-end px-6 py-4">
