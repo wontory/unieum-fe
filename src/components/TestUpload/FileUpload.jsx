@@ -33,6 +33,8 @@ const FileUpload = () => {
       const formData = new FormData();
       formData.append("targetTestFormat", "short-answer");
       formData.append("targetLanguage", "korean");
+      formData.append("openaiModel", "gpt-3.5-turbo-16k");
+      formData.append("countOfQuestions", "5");
       files.map((file) => formData.append("pdf", file.file));
 
       const res = await testApi.postPdf(formData);
