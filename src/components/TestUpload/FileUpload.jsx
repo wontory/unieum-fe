@@ -9,11 +9,11 @@ import FilePondPluginPdfPreview from "filepond-plugin-pdf-preview";
 
 import { testApi } from "../../apis/testApi";
 
+import StyledFilepondContainer from "../../styles/StyledFilepondContainer";
 import ModalPortal from "../UI/Modal/ModalPortal";
 import LoadingModal from "../UI/Modal/LoadingModal";
 import "filepond/dist/filepond.min.css";
 import "filepond-plugin-pdf-preview/dist/filepond-plugin-pdf-preview.min.css";
-import "../../styles/filepond.css";
 
 registerPlugin(FilePondPluginFileValidateType, FilePondPluginPdfPreview);
 
@@ -48,17 +48,19 @@ const FileUpload = () => {
 
   return (
     <>
-      <FilePond
-        name="files"
-        files={files}
-        onupdatefiles={setFiles}
-        allowMultiple={true}
-        allowFileTypeValidation={true}
-        acceptedFileTypes="application/pdf"
-        labelIdle='<span class="filepond--label-action">컴퓨터에서 파일 업로드</span> 또는 여기에 파일을 드롭!'
-        credits={false}
-        disabled={!ctx.isSignedIn}
-      />
+      <StyledFilepondContainer files={files}>
+        <FilePond
+          name="files"
+          files={files}
+          onupdatefiles={setFiles}
+          allowMultiple={true}
+          allowFileTypeValidation={true}
+          acceptedFileTypes="application/pdf"
+          labelIdle='<span class="btn filepond--label-action">기기에서 파일 업로드</span><br/>또는 여기에 파일을 드롭!'
+          credits={false}
+          disabled={!ctx.isSignedIn}
+        />
+      </StyledFilepondContainer>
       <div className="card card-bordered rounded-t-none border-t-0 bg-base-100">
         <div className="card-body p-0 gap-0">
           <div className="card-actions justify-end px-6 py-4">
