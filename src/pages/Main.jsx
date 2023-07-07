@@ -64,9 +64,7 @@ const Main = () => {
           </a>
         ))}
       </div>
-      <div className="card card-bordered bg-base-100">
-        <div className="card-body p-0 gap-0">{tabArr[tabIndex].content}</div>
-      </div>
+      <form className="form-control">{tabArr[tabIndex].content}</form>
       <div className="flex flex-col gap-3 md:flex-row justify-between">
         {featureArr.map((feature, index) => (
           <FeatureCard key={"feature" + index}>

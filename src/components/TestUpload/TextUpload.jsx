@@ -40,28 +40,33 @@ const TextUpload = () => {
   return (
     <>
       <textarea
-        className="textarea textarea-ghost h-[220px] rounded-2xl rounded-b-none"
+        className="textarea textarea-bordered h-[220px] w-full rounded-2xl rounded-b-none"
         placeholder="문제를 생성하고 싶은 관련 텍스트를 입력해주세요."
         value={text}
         onChange={handleTextChange}
+        disabled={!ctx.isSignedIn}
       />
-      <div className="card-actions justify-end px-6 py-4">
-        {ctx.isSignedIn ? (
-          <button
-            className="btn btn-primary"
-            onClick={handleUpload}
-            disabled={text.length === 0}
-          >
-            문제 생성
-          </button>
-        ) : (
-          <Link
-            className="btn btn-primary"
-            to="https://develop.unieum.kr:4000/auth/kakao"
-          >
-            로그인 후 이용하기
-          </Link>
-        )}
+      <div className="card card-bordered rounded-t-none border-t-0 bg-base-100">
+        <div className="card-body p-0 gap-0">
+          <div className="card-actions justify-end px-6 py-4">
+            {ctx.isSignedIn ? (
+              <button
+                className="btn btn-primary"
+                onClick={handleUpload}
+                disabled={text.length === 0}
+              >
+                문제 생성
+              </button>
+            ) : (
+              <Link
+                className="btn btn-primary"
+                to="https://develop.unieum.kr:4000/auth/kakao"
+              >
+                로그인 후 이용하기
+              </Link>
+            )}
+          </div>
+        </div>
       </div>
       <ModalPortal>
         <LoadingModal>열심히 문제 만드는 중...</LoadingModal>

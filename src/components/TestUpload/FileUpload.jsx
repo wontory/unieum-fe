@@ -57,24 +57,29 @@ const FileUpload = () => {
         acceptedFileTypes="application/pdf"
         labelIdle='<span class="filepond--label-action">컴퓨터에서 파일 업로드</span> 또는 여기에 파일을 드롭!'
         credits={false}
+        disabled={!ctx.isSignedIn}
       />
-      <div className="card-actions justify-end px-6 py-4">
-        {ctx.isSignedIn ? (
-          <button
-            className="btn btn-primary"
-            onClick={handleUpload}
-            disabled={files.length === 0}
-          >
-            문제 생성
-          </button>
-        ) : (
-          <Link
-            className="btn btn-primary"
-            to="https://develop.unieum.kr:4000/auth/kakao"
-          >
-            로그인 후 이용하기
-          </Link>
-        )}
+      <div className="card card-bordered rounded-t-none border-t-0 bg-base-100">
+        <div className="card-body p-0 gap-0">
+          <div className="card-actions justify-end px-6 py-4">
+            {ctx.isSignedIn ? (
+              <button
+                className="btn btn-primary"
+                onClick={handleUpload}
+                disabled={files.length === 0}
+              >
+                문제 생성
+              </button>
+            ) : (
+              <Link
+                className="btn btn-primary"
+                to="https://develop.unieum.kr:4000/auth/kakao"
+              >
+                로그인 후 이용하기
+              </Link>
+            )}
+          </div>
+        </div>
       </div>
       <ModalPortal>
         <LoadingModal>열심히 문제 만드는 중...</LoadingModal>
