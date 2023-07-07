@@ -50,19 +50,17 @@ const FileUpload = () => {
 
   return (
     <>
-      <FilepondContainer files={files}>
-        <FilePond
-          name="files"
-          files={files}
-          onupdatefiles={setFiles}
-          allowMultiple={true}
-          allowFileTypeValidation={true}
-          acceptedFileTypes="application/pdf"
-          labelIdle='<span class="btn filepond--label-action">기기에서 파일 업로드</span><br/>또는 여기에 파일을 드롭!'
-          credits={false}
-          disabled={!ctx.isSignedIn}
-        />
-      </FilepondContainer>
+      <FilePond
+        name="files"
+        files={files}
+        onupdatefiles={setFiles}
+        allowMultiple={true}
+        allowFileTypeValidation={true}
+        acceptedFileTypes="application/pdf"
+        labelIdle='<span class="btn filepond--label-action">기기에서 파일 업로드</span><br/>또는 여기에 파일을 드롭!'
+        credits={false}
+        disabled={!ctx.isSignedIn}
+      />
       <div className="card card-bordered rounded-t-none border-t-0 bg-base-100">
         <div className="card-body p-0 gap-0">
           <div className="card-actions justify-end px-6 py-4">
