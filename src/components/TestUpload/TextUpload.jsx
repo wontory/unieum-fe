@@ -60,7 +60,7 @@ const TextUpload = () => {
             ) : (
               <Link
                 className="btn btn-primary"
-                to="https://server.unieum.kr/auth/kakao"
+                to="https://develop.unieum.kr:4000/auth/kakao"
               >
                 로그인 후 이용하기
               </Link>
