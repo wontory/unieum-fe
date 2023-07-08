@@ -35,7 +35,7 @@ const FileUpload = () => {
       formData.append("targetLanguage", "korean");
       formData.append("openaiModel", "gpt-3.5-turbo-16k");
       formData.append("countOfQuestions", "5");
-      files.map((file) => formData.append("pdf", file.file));
+      files.map((file) => formData.append("fileList", file.file));
 
       const res = await testApi.postFileList(formData);
       testGenerationId = res.data.data.testGenerationId;
