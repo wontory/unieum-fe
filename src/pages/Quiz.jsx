@@ -69,14 +69,23 @@ const Quiz = () => {
           />
         )}
       </div>
-      <div className="flex justify-between">
-        <button className="btn btn-neutral" onClick={handlePrevQuestion}>
+      <div className="join">
+        <button
+          className="btn btn-neutral w-1/3 join-item"
+          onClick={handlePrevQuestion}
+        >
           이전 문제
         </button>
-        <button className="btn btn-secondary" onClick={handleShowAnswer}>
+        <button
+          className="btn btn-secondary w-1/3 join-item"
+          onClick={handleShowAnswer}
+        >
           {showAnswer ? "정답 가리기" : "정답 보기"}
         </button>
-        <button className="btn btn-primary" onClick={handleNextQuestion}>
+        <button
+          className="btn btn-primary w-1/3 join-item"
+          onClick={handleNextQuestion}
+        >
           다음 문제
         </button>
       </div>
