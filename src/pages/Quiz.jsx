@@ -47,7 +47,7 @@ const Quiz = () => {
   return (
     <div
       className="flex flex-col justify-between max-w-[1200px] w-full"
-      style={{ height: "calc(100vh - 160px)" }}
+      style={{ minHeight: "calc(100vh - 160px)" }}
     >
       <div className="flex flex-col gap-4">
         <progress
@@ -69,7 +69,7 @@ const Quiz = () => {
           />
         )}
       </div>
-      <div className="join">
+      <div className="join mt-4">
         <button
           className="btn btn-neutral w-1/3 join-item"
           onClick={handlePrevQuestion}
