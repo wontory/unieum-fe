@@ -37,7 +37,7 @@ const FileUpload = () => {
       formData.append("countOfQuestions", "5");
       files.map((file) => formData.append("pdf", file.file));
 
-      const res = await testApi.postPdf(formData);
+      const res = await testApi.postFileList(formData);
       testGenerationId = res.data.data.testGenerationId;
     } catch (err) {
       alert(`문제 생성에 실패했습니다. (${err?.response?.data.message})`);

@@ -10,8 +10,8 @@ const testInstance = axios.create({
   withCredentials: true,
 });
 
-const postPdf = async (formData) => {
-  return await testInstance.post(`${ROUTE}/upload/pdf`, formData, {
+const postFileList = async (formData) => {
+  return await testInstance.post(`${ROUTE}/upload/fileList`, formData, {
     headers: { "Content-Type": "multipart/form-data" },
   });
 };
@@ -39,7 +39,7 @@ const getTest = async (id) => {
 };
 
 export const testApi = {
-  postPdf,
+  postFileList,
   postText,
   getList,
   getTest,
