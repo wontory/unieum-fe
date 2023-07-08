@@ -21,6 +21,15 @@ const Quiz = () => {
     });
   }, [id]);
 
+  const handlePrevQuestion = () => {
+    if (currentIndex === 0) {
+      alert("이전 문제가 없습니다.");
+    } else {
+      setCurrentIndex((curIndex) => curIndex - 1);
+      setShowAnswer(false);
+    }
+  };
+
   const handleNextQuestion = () => {
     if (currentIndex === questions.length - 1) {
       alert("퀴즈가 끝났습니다!");
@@ -32,7 +41,7 @@ const Quiz = () => {
   };
 
   const handleShowAnswer = () => {
-    setShowAnswer(true);
+    setShowAnswer((prev) => !prev);
   };
 
   return (
@@ -60,15 +69,17 @@ const Quiz = () => {
           />
         )}
       </div>
-      {showAnswer ? (
-        <button className="btn btn-primary w-full" onClick={handleNextQuestion}>
+      <div className="flex justify-between">
+        <button className="btn btn-neutral" onClick={handlePrevQuestion}>
+          이전 문제
+        </button>
+        <button className="btn btn-secondary" onClick={handleShowAnswer}>
+          {showAnswer ? "정답 가리기" : "정답 보기"}
+        </button>
+        <button className="btn btn-primary" onClick={handleNextQuestion}>
           다음 문제
         </button>
-      ) : (
-        <button className="btn btn-primary w-full" onClick={handleShowAnswer}>
-          정답 보기
-        </button>
-      )}
+      </div>
     </div>
   );
 };
