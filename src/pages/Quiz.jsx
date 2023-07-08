@@ -4,6 +4,8 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import { testApi } from "../apis/testApi";
 
+import Answer from "../components/Answer/Answer";
+
 const Quiz = () => {
   const navigate = useNavigate();
   const { id } = useParams();
@@ -48,18 +50,14 @@ const Quiz = () => {
           {questions[currentIndex] && questions[currentIndex].question}
         </div>
         <textarea
-          className="textarea textarea-bordered w-full"
+          className="textarea textarea-bordered textarea-lg w-full"
           placeholder="정답을 입력해주세요!"
         />
         {showAnswer && (
-          <div className="flex flex-col gap-2">
-            <p>AI 정답 (정확하지 않을 수 있습니다!)</p>
-            <div className="alert">
-              <span>
-                {questions[currentIndex] && questions[currentIndex].answer}
-              </span>
-            </div>
-          </div>
+          <Answer
+            answer={questions[currentIndex] && questions[currentIndex].answer}
+            feedback="준비중인 기능입니다."
+          />
         )}
       </div>
       {showAnswer ? (
