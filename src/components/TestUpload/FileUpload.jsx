@@ -41,6 +41,7 @@ const FileUpload = () => {
       testGenerationId = res.data.data.testGenerationId;
     } catch (err) {
       alert(`문제 생성에 실패했습니다. (${err?.response?.data.message})`);
+      console.log(err);
       window.loading_modal.closeModal();
       window.location.reload();
     }
