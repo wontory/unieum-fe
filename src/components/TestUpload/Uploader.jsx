@@ -79,7 +79,7 @@ const Uploader = ({ dataType, data, disabled }) => {
       <div className="card card-bordered rounded-t-none border-t-0 bg-base-100">
         <div className="card-body p-0 gap-0">
           <div className="card-actions justify-end items-center px-6 py-4">
-            {!ctx.isSignedIn ? (
+            {ctx.isSignedIn ? (
               <>
                 <input
                   type="range"
