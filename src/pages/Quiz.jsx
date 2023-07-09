@@ -4,7 +4,8 @@ import { useParams } from "react-router-dom";
 
 import { testApi } from "../apis/testApi";
 
-import ShortAnswerQuiz from "./ShortAnswerQuiz";
+import ShortAnswerQuiz from "../components/Quiz/ShortAnswerQuiz";
+import MultipleChoiceQuiz from "../components/Quiz/MultipleChoiceQuiz";
 
 const Quiz = () => {
   const { id } = useParams();
@@ -24,7 +25,7 @@ const Quiz = () => {
   return outputTestFormat === "short-answer" ? (
     <ShortAnswerQuiz questions={questions} />
   ) : (
-    <div>Not yet implemented</div>
+    <MultipleChoiceQuiz questions={questions} />
   );
 };
 
