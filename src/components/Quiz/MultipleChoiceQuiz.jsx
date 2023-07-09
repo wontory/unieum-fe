@@ -40,11 +40,12 @@ const MultipleChoiceQuiz = ({ questions }) => {
         <div className="card-title">
           {questions[currentIndex] && questions[currentIndex].question}
         </div>
-        {questions[currentIndex].options.map((option, index) => (
-          <div>
-            {index + 1} {option}
-          </div>
-        ))}
+        {questions[currentIndex] &&
+          questions[currentIndex].options.map((option, index) => (
+            <div>
+              {index + 1} {option}
+            </div>
+          ))}
       </div>
       <div className="join mt-4">
         <button

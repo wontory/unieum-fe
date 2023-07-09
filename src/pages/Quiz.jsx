@@ -23,7 +23,7 @@ const Quiz = () => {
   }, [id]);
 
   return outputTestFormat === "multiple-choice" ? (
-    <div>Not implemented yet.</div>
+    <MultipleChoiceQuiz questions={questions} />
   ) : (
     <ShortAnswerQuiz questions={questions} />
   );
