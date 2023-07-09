@@ -11,19 +11,15 @@ const testInstance = axios.create({
 });
 
 const postFileList = async (formData) => {
-  return await testInstance.post(`${ROUTE}/upload/fileList`, formData, {
+  return await testInstance.post(`${ROUTE}/upload/file-list`, formData, {
     headers: { "Content-Type": "multipart/form-data" },
   });
 };
 
 const postText = async (text) => {
-  return await testInstance.post(
-    `${ROUTE}/upload/text`,
-    { targetTestFormat: "short-answer", targetLanguage: "korean", text: text },
-    {
-      headers: { "Content-Type": "application/json" },
-    }
-  );
+  return await testInstance.post(`${ROUTE}/upload/text`, text, {
+    headers: { "Content-Type": "application/json" },
+  });
 };
 
 const getList = async () => {
