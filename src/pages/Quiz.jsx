@@ -10,7 +10,7 @@ import MultipleChoiceQuiz from "../components/Quiz/MultipleChoiceQuiz";
 const Quiz = () => {
   const { id } = useParams();
 
-  const [outputTestFormat, setOutputTestFormat] = useState([]);
+  const [outputTestFormat, setOutputTestFormat] = useState();
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const Quiz = () => {
     });
   }, [id]);
 
-  return outputTestFormat === "short-answer" ? (
+  return outputTestFormat && outputTestFormat === "short-answer" ? (
     <ShortAnswerQuiz questions={questions} />
   ) : (
     <MultipleChoiceQuiz questions={questions} />
