@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
-import Answer from "../components/Answer/Answer";
+import Answer from "../Answer/Answer";
 
 const ShortAnswerQuiz = ({ questions }) => {
   const navigate = useNavigate();
