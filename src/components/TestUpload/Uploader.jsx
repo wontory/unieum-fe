@@ -14,8 +14,8 @@ const Uploader = ({ dataType, data, disabled }) => {
 
   const ctx = useContext(AuthContext);
 
-  const [countOfQuestions, setCountOfQuestions] = useState();
-  const [targetTestFormat, setTargetTestFormat] = useState();
+  const [countOfQuestions, setCountOfQuestions] = useState("5");
+  const [targetTestFormat, setTargetTestFormat] = useState("short-answer");
 
   const handleCountOfQuestions = (event) => {
     setCountOfQuestions(event.target.value);
@@ -79,17 +79,19 @@ const Uploader = ({ dataType, data, disabled }) => {
       <div className="card card-bordered rounded-t-none border-t-0 bg-base-100">
         <div className="card-body p-0 gap-0">
           <div className="card-actions justify-end items-center px-6 py-4">
-            {ctx.isSignedIn ? (
+            {!ctx.isSignedIn ? (
               <>
                 <input
                   type="range"
                   min="1"
                   max="10"
                   className="range w-[250px]"
+                  value={countOfQuestions}
                   onChange={handleCountOfQuestions}
                 />
                 <select
                   className="select select-bordered"
+                  value={targetTestFormat}
                   onChange={handleTestType}
                 >
                   <option value="short-answer">주관식</option>
