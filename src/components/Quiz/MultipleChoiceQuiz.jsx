@@ -41,11 +41,13 @@ const MultipleChoiceQuiz = ({ questions }) => {
           {questions[currentIndex] && questions[currentIndex].question}
         </div>
         {questions[currentIndex] &&
-          questions[currentIndex].options.map((option, index) => (
-            <div>
-              {index + 1} {option}
-            </div>
-          ))}
+          questions[currentIndex].options
+            .sort(() => Math.random() - 0.5)
+            .map((option, index) => (
+              <div>
+                {index + 1} {option}
+              </div>
+            ))}
       </div>
       <div className="join mt-4">
         <button
