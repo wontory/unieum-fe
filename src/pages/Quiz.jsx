@@ -23,7 +23,7 @@ const Quiz = () => {
   }, [id]);
 
   return (
-    questions &&
+    questions[0] &&
     (outputTestFormat === "multiple-choice" ? (
       <MultipleChoiceQuiz questions={questions} />
     ) : (
