@@ -83,7 +83,7 @@ const Uploader = ({ dataType, data, disabled }) => {
               <>
                 <input
                   type="range"
-                  min="1"
+                  min="2"
                   max="10"
                   step="2"
                   className="range w-[250px]"
