@@ -17,6 +17,8 @@ const Uploader = ({ dataType, data, disabled }) => {
   const [countOfQuestions, setCountOfQuestions] = useState("5");
   const [targetTestFormat, setTargetTestFormat] = useState("short-answer");
 
+  const step = ["매우적게", "적게", "보통", "많이", "매우많이"];
+
   const handleCountOfQuestions = (event) => {
     setCountOfQuestions(event.target.value);
   };
@@ -81,15 +83,22 @@ const Uploader = ({ dataType, data, disabled }) => {
           <div className="card-actions justify-end items-center px-6 py-4">
             {ctx.isSignedIn ? (
               <>
-                <input
-                  type="range"
-                  min="2"
-                  max="10"
-                  step="2"
-                  className="range w-[250px]"
-                  value={countOfQuestions}
-                  onChange={handleCountOfQuestions}
-                />
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">
+                      문제량: {step[countOfQuestions / 2]}
+                    </span>
+                  </label>
+                  <input
+                    type="range"
+                    min="2"
+                    max="10"
+                    step="2"
+                    className="range w-[250px]"
+                    value={countOfQuestions}
+                    onChange={handleCountOfQuestions}
+                  />
+                </div>
                 <select
                   className="select select-bordered"
                   value={targetTestFormat}
