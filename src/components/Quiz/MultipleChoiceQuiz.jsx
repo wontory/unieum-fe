@@ -42,15 +42,19 @@ const MultipleChoiceQuiz = ({ questions }) => {
         <div className="card-title">
           {questions[currentIndex] && questions[currentIndex].question}
         </div>
-        {questions[currentIndex] &&
-          questions[currentIndex].options
-            .sort(() => Math.random() - 0.5)
-            .map((option, index) => (
-              <div className="alert">
-                <p className="text-xl">{circledDigit[index]}</p>
-                <span>{option}</span>
-              </div>
-            ))}
+        <ul className="menu menu-lg w-full rounded-box">
+          {questions[currentIndex] &&
+            questions[currentIndex].options
+              .sort(() => Math.random() - 0.5)
+              .map((option, index) => (
+                <li>
+                  <a>
+                    <p className="text-xl">{circledDigit[index]}</p>
+                    <span>{option}</span>
+                  </a>
+                </li>
+              ))}
+        </ul>
       </div>
       <div className="join mt-4">
         <button
