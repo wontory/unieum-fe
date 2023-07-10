@@ -44,8 +44,9 @@ const MultipleChoiceQuiz = ({ questions }) => {
           questions[currentIndex].options
             .sort(() => Math.random() - 0.5)
             .map((option, index) => (
-              <div>
-                {index + 1} {option}
+              <div className="alert">
+                <p>{index + 1}</p>
+                <span>{option}</span>
               </div>
             ))}
       </div>
