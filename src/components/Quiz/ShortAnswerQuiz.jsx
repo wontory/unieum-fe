@@ -52,6 +52,7 @@ const ShortAnswerQuiz = ({ questions }) => {
           className="textarea textarea-bordered textarea-lg w-full"
           placeholder="정답을 입력해주세요!"
           ref={userAnswer}
+          disabled={showAnswer}
         />
         {showAnswer && (
           <Answer
@@ -72,7 +73,7 @@ const ShortAnswerQuiz = ({ questions }) => {
           className="btn btn-primary w-1/3 join-item"
           onClick={handleShowAnswer}
         >
-          {showAnswer ? "정답 가리기" : "정답 보기"}
+          {showAnswer ? "다시 풀기" : "정답 보기"}
         </button>
         <button
           className="btn btn-neutral w-1/3 join-item"
