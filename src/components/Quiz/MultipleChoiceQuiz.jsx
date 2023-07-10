@@ -10,7 +10,7 @@ const MultipleChoiceQuiz = ({ questions }) => {
   const circledDigit = ["①", "②", "③", "④"];
 
   const checkAnswer = (index) => {
-    if (index === questions[currentIndex].answer) {
+    if (index + 1 === questions[currentIndex].answer) {
       alert("정답입니다!");
     } else {
       alert("오답입니다!");
