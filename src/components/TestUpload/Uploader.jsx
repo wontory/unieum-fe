@@ -85,6 +85,7 @@ const Uploader = ({ dataType, data, disabled }) => {
                   type="range"
                   min="1"
                   max="10"
+                  step="2"
                   className="range w-[250px]"
                   value={countOfQuestions}
                   onChange={handleCountOfQuestions}
