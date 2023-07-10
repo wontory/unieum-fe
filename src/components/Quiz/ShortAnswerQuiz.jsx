@@ -17,6 +17,7 @@ const ShortAnswerQuiz = ({ questions }) => {
     } else {
       setCurrentIndex((curIndex) => curIndex - 1);
       setShowAnswer(false);
+      userAnswer.current.value = "";
     }
   };
 
@@ -27,6 +28,7 @@ const ShortAnswerQuiz = ({ questions }) => {
     } else {
       setCurrentIndex((curIndex) => curIndex + 1);
       setShowAnswer(false);
+      userAnswer.current.value = "";
     }
   };
 
@@ -49,6 +51,7 @@ const ShortAnswerQuiz = ({ questions }) => {
         <textarea
           className="textarea textarea-bordered textarea-lg w-full"
           placeholder="정답을 입력해주세요!"
+          value={userAnswer.current.value}
           ref={userAnswer}
         />
         {showAnswer && (
