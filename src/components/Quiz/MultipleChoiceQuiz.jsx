@@ -47,8 +47,8 @@ const MultipleChoiceQuiz = ({ questions }) => {
             questions[currentIndex].options
               .sort(() => Math.random() - 0.5)
               .map((option, index) => (
-                <li className="bg-gray-100">
-                  <a>
+                <li>
+                  <a className="bg-gray-100">
                     <p className="text-xl">{circledDigit[index]}</p>
                     <span>{option}</span>
                   </a>
