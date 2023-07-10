@@ -14,7 +14,7 @@ const Uploader = ({ dataType, data, disabled }) => {
 
   const ctx = useContext(AuthContext);
 
-  const [countOfQuestions, setCountOfQuestions] = useState("5");
+  const [countOfQuestions, setCountOfQuestions] = useState("6");
   const [targetTestFormat, setTargetTestFormat] = useState("short-answer");
 
   const step = ["매우적게", "적게", "보통", "많이", "매우많이"];
@@ -86,7 +86,7 @@ const Uploader = ({ dataType, data, disabled }) => {
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">
-                      문제량: {step[countOfQuestions / 2]}
+                      문제량: {step[countOfQuestions / 2 - 1]}
                     </span>
                   </label>
                   <input
