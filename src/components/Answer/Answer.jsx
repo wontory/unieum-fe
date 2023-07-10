@@ -17,9 +17,7 @@ const Answer = ({ question, answer, userAnswer }) => {
     };
 
     testApi.postGrade(data).then((res) => {
-      console.log(data);
-      console.log(res);
-      setFeedback(res.data.gradeResult.feedback);
+      setFeedback(res.data.gradeResult.feedBack);
     });
   }, []);
 
