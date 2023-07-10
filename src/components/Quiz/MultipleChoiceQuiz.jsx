@@ -9,6 +9,14 @@ const MultipleChoiceQuiz = ({ questions }) => {
 
   const circledDigit = ["①", "②", "③", "④"];
 
+  const checkAnswer = (index) => {
+    if (index === questions[currentIndex].answer) {
+      alert("정답입니다!");
+    } else {
+      alert("오답입니다!");
+    }
+  };
+
   const handlePrevQuestion = () => {
     if (currentIndex === 0) {
       alert("이전 문제가 없습니다.");
@@ -45,7 +53,10 @@ const MultipleChoiceQuiz = ({ questions }) => {
             .sort(() => Math.random() - 0.5)
             .map((option, index) => (
               <li>
-                <a className="bg-gray-100 p-4">
+                <a
+                  className="bg-gray-100 p-4"
+                  onClick={() => checkAnswer(index)}
+                >
                   <p className="text-xl">{circledDigit[index]}</p>
                   <span>{option}</span>
                 </a>
