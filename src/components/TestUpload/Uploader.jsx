@@ -84,7 +84,7 @@ const Uploader = ({ dataType, data, disabled }) => {
             {ctx.isSignedIn ? (
               <>
                 <div className="form-control">
-                  <label className="label">
+                  <label className="label p-0 pb-2">
                     <span className="label-text">
                       문제량: {step[countOfQuestions / 2 - 1]}
                     </span>
