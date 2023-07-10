@@ -51,7 +51,6 @@ const ShortAnswerQuiz = ({ questions }) => {
         <textarea
           className="textarea textarea-bordered textarea-lg w-full"
           placeholder="정답을 입력해주세요!"
-          value={userAnswer.current.value}
           ref={userAnswer}
         />
         {showAnswer && (
