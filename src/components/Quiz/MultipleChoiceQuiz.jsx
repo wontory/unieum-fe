@@ -40,7 +40,7 @@ const MultipleChoiceQuiz = ({ questions }) => {
           max={questions.length}
         />
         <div className="card-title">{questions[currentIndex].question}</div>
-        <ul className="menu menu-lg w-full rounded-box gap-4 p-0">
+        <ul className="menu menu-lg w-full rounded-box gap-3 p-0">
           {questions[currentIndex].options
             .sort(() => Math.random() - 0.5)
             .map((option, index) => (
