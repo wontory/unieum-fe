@@ -33,7 +33,11 @@ const Answer = ({ question, answer, userAnswer }) => {
           <UnieumIcon width={20} />
           <p className="font-semibold">유니음의 제안</p>
         </div>
-        {feedback}
+        {feedback ? (
+          feedback
+        ) : (
+          <span className="loading loading-spinner loading-md"></span>
+        )}
       </div>
     </Card>
   );
