@@ -64,13 +64,13 @@ const ShortAnswerQuiz = ({ questions }) => {
           이전 문제
         </button>
         <button
-          className="btn btn-secondary w-1/3 join-item"
+          className="btn btn-primary w-1/3 join-item"
           onClick={handleShowAnswer}
         >
           {showAnswer ? "정답 가리기" : "정답 보기"}
         </button>
         <button
-          className="btn btn-primary w-1/3 join-item"
+          className="btn btn-neutral w-1/3 join-item"
           onClick={handleNextQuestion}
         >
           다음 문제

@@ -67,7 +67,7 @@ const MultipleChoiceQuiz = ({ questions }) => {
           이전 문제
         </button>
         <button
-          className="btn btn-primary w-1/2 join-item"
+          className="btn btn-neutral w-1/2 join-item"
           onClick={handleNextQuestion}
         >
           다음 문제
