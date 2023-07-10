@@ -44,16 +44,14 @@ const ShortAnswerQuiz = ({ questions }) => {
           value={currentIndex + 1}
           max={questions.length}
         />
-        <div className="card-title">
-          {questions[currentIndex] && questions[currentIndex].question}
-        </div>
+        <div className="card-title">{questions[currentIndex].question}</div>
         <textarea
           className="textarea textarea-bordered textarea-lg w-full"
           placeholder="정답을 입력해주세요!"
         />
         {showAnswer && (
           <Answer
-            answer={questions[currentIndex] && questions[currentIndex].answer}
+            answer={questions[currentIndex].answer}
             feedback="준비중인 기능입니다."
           />
         )}

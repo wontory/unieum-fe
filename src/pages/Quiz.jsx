@@ -22,10 +22,13 @@ const Quiz = () => {
     });
   }, [id]);
 
-  return outputTestFormat === "multiple-choice" ? (
-    <MultipleChoiceQuiz questions={questions} />
-  ) : (
-    <ShortAnswerQuiz questions={questions} />
+  return (
+    questions &&
+    (outputTestFormat === "multiple-choice" ? (
+      <MultipleChoiceQuiz questions={questions} />
+    ) : (
+      <ShortAnswerQuiz questions={questions} />
+    ))
   );
 };
 

@@ -39,21 +39,18 @@ const MultipleChoiceQuiz = ({ questions }) => {
           value={currentIndex + 1}
           max={questions.length}
         />
-        <div className="card-title">
-          {questions[currentIndex] && questions[currentIndex].question}
-        </div>
+        <div className="card-title">{questions[currentIndex].question}</div>
         <ul className="menu menu-lg w-full rounded-box">
-          {questions[currentIndex] &&
-            questions[currentIndex].options
-              .sort(() => Math.random() - 0.5)
-              .map((option, index) => (
-                <li>
-                  <a className="bg-gray-100">
-                    <p className="text-xl">{circledDigit[index]}</p>
-                    <span>{option}</span>
-                  </a>
-                </li>
-              ))}
+          {questions[currentIndex].options
+            .sort(() => Math.random() - 0.5)
+            .map((option, index) => (
+              <li>
+                <a className="bg-gray-100">
+                  <p className="text-xl">{circledDigit[index]}</p>
+                  <span>{option}</span>
+                </a>
+              </li>
+            ))}
         </ul>
       </div>
       <div className="join mt-4">
