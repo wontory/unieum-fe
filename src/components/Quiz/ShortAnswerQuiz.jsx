@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 import { useNavigate } from "react-router-dom";
 
@@ -9,6 +9,7 @@ const ShortAnswerQuiz = ({ questions }) => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
+  const userAnswer = useRef("");
 
   const handlePrevQuestion = () => {
     if (currentIndex === 0) {
@@ -48,11 +49,13 @@ const ShortAnswerQuiz = ({ questions }) => {
         <textarea
           className="textarea textarea-bordered textarea-lg w-full"
           placeholder="정답을 입력해주세요!"
+          ref={userAnswer}
         />
         {showAnswer && (
           <Answer
+            question={questions[currentIndex].question}
             answer={questions[currentIndex].answer}
-            feedback="준비중인 기능입니다."
+            userAnswer={userAnswer.current.value}
           />
         )}
       </div>

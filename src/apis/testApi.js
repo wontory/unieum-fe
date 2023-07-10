@@ -22,6 +22,12 @@ const postText = async (text) => {
   });
 };
 
+const postGrade = async (answer) => {
+  return await testInstance.post(`${ROUTE}/grade`, answer, {
+    headers: { "Content-Type": "application/json" },
+  });
+};
+
 const getList = async () => {
   return await testInstance.get(`${ROUTE}/all`, {
     headers: { "Content-Type": "application/json" },
@@ -37,6 +43,7 @@ const getTest = async (id) => {
 export const testApi = {
   postFileList,
   postText,
+  postGrade,
   getList,
   getTest,
 };
