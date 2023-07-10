@@ -7,6 +7,8 @@ const MultipleChoiceQuiz = ({ questions }) => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const circledDigit = ["①", "②", "③", "④"];
+
   const handlePrevQuestion = () => {
     if (currentIndex === 0) {
       alert("이전 문제가 없습니다.");
@@ -45,7 +47,7 @@ const MultipleChoiceQuiz = ({ questions }) => {
             .sort(() => Math.random() - 0.5)
             .map((option, index) => (
               <div className="alert">
-                <p>{index + 1}</p>
+                <p>{circledDigit[index]}</p>
                 <span>{option}</span>
               </div>
             ))}
