@@ -18,7 +18,7 @@ const generatePdf = (data, testFormat, isAnswerSheet) => {
           ],
           [
             item.options
-              .map((option, index) => `${index + 1} ${option}`)
+              .map((option, index) => `${index + 1}. ${option}`)
               .join("\n"),
           ],
         ])
