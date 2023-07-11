@@ -12,7 +12,7 @@ const generatePdf = (data, testFormat, isAnswerSheet) => {
     [
       item.question,
       testFormat === "multiple-choice" &&
-        item.options.map((option) => option.text).join("\n"),
+        item.options.map((option, index) => index + option).join("\n"),
     ],
     [isAnswerSheet ? item.answer : ""],
   ]);
