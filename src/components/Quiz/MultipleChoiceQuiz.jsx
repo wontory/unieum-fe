@@ -24,7 +24,7 @@ const MultipleChoiceQuiz = ({ questions }) => {
       alert("이전 문제가 없습니다.");
     } else {
       setCurrentIndex((prev) => prev - 1);
-      setShowAnswer(false);
+      setShowAnswer(0);
     }
   };
 
@@ -34,7 +34,7 @@ const MultipleChoiceQuiz = ({ questions }) => {
       navigate("/my");
     } else {
       setCurrentIndex((prev) => prev + 1);
-      setShowAnswer(false);
+      setShowAnswer(0);
     }
   };
 
