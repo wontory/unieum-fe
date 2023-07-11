@@ -7,7 +7,7 @@ import Uploader from "./Uploader";
 const TextUpload = () => {
   const ctx = useContext(AuthContext);
 
-  const text = useRef();
+  const text = useRef("");
 
   return (
     <>
