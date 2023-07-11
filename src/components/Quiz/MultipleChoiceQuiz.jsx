@@ -6,10 +6,12 @@ const MultipleChoiceQuiz = ({ questions }) => {
   const navigate = useNavigate();
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [showAnswer, setShowAnswer] = useState(0);
 
   const circledDigit = ["①", "②", "③", "④"];
 
   const checkAnswer = (index) => {
+    setShowAnswer(1);
     if (index === questions[currentIndex].answer) {
       alert("정답입니다!");
     } else {
@@ -21,7 +23,7 @@ const MultipleChoiceQuiz = ({ questions }) => {
     if (currentIndex === 0) {
       alert("이전 문제가 없습니다.");
     } else {
-      setCurrentIndex((curIndex) => curIndex - 1);
+      setCurrentIndex((prev) => prev - 1);
       setShowAnswer(false);
     }
   };
@@ -31,9 +33,13 @@ const MultipleChoiceQuiz = ({ questions }) => {
       alert("퀴즈가 끝났습니다!");
       navigate("/my");
     } else {
-      setCurrentIndex((curIndex) => curIndex + 1);
+      setCurrentIndex((prev) => prev + 1);
       setShowAnswer(false);
     }
+  };
+
+  const handleShowAnswer = () => {
+    setShowAnswer((prev) => (prev === 0 ? 2 : 0));
   };
 
   return (
@@ -48,7 +54,10 @@ const MultipleChoiceQuiz = ({ questions }) => {
           max={questions.length}
         />
         <div className="card-title">{questions[currentIndex].question}</div>
-        <ul className="menu menu-lg w-full rounded-box gap-3 p-0">
+        <ul
+          className="menu menu-lg w-full rounded-box gap-3 p-0"
+          disabled={showAnswer !== 0}
+        >
           {questions[currentIndex].options.map((option, index) => (
             <li>
               <a className="bg-gray-100 p-4" onClick={() => checkAnswer(index)}>
@@ -61,13 +70,19 @@ const MultipleChoiceQuiz = ({ questions }) => {
       </div>
       <div className="join mt-4">
         <button
-          className="btn btn-neutral w-1/2 join-item"
+          className="btn btn-neutral w-1/3 join-item"
           onClick={handlePrevQuestion}
         >
           이전 문제
         </button>
         <button
-          className="btn btn-neutral w-1/2 join-item"
+          className="btn btn-primary w-1/3 join-item"
+          onClick={handleShowAnswer}
+        >
+          {showAnswer === 0 ? "정답 보기" : "다시 풀기"}
+        </button>
+        <button
+          className="btn btn-neutral w-1/3 join-item"
           onClick={handleNextQuestion}
         >
           다음 문제
