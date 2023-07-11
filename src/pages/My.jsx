@@ -27,7 +27,7 @@ const My = () => {
         </div>
       </div>
       <div className="flex justify-center">
-        {testList ? <EmptyList /> : <TestList testList={testList} />}
+        {testList ? <TestList testList={testList} /> : <EmptyList />}
       </div>
       <div className="flex justify-center">
         <div className="join">
