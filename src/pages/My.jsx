@@ -6,7 +6,7 @@ import EmptyList from "../components/TestList/EmptyList";
 import TestList from "../components/TestList/TestList";
 
 const My = () => {
-  const [testList, setTestList] = useState();
+  const [testList, setTestList] = useState([]);
 
   useEffect(() => {
     testApi.getList().then((res) => {
@@ -27,7 +27,11 @@ const My = () => {
         </div>
       </div>
       <div className="flex justify-center">
-        {testList ? <TestList testList={testList} /> : <EmptyList />}
+        {testList.length === 0 ? (
+          <EmptyList />
+        ) : (
+          <TestList testList={testList} />
+        )}
       </div>
       <div className="flex justify-center">
         <div className="join">
