@@ -11,8 +11,9 @@ const generatePdf = (data, testFormat, isAnswerSheet) => {
   const tableData = data.flatMap((item) => [
     [
       item.question,
-      testFormat === "multiple-choice" &&
-        item.options.map((option, index) => `${index} ${option}\n`),
+      testFormat === "multiple-choice"
+        ? item.options.map((option, index) => `${index} ${option}`).join("\n")
+        : "",
     ],
     [isAnswerSheet ? item.answer : ""],
   ]);
