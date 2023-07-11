@@ -9,12 +9,9 @@ const generatePdf = (data, testFormat, isAnswerSheet) => {
   const doc = new jsPDF();
 
   const tableData = data.flatMap((item) => [
-    [
-      item.question,
-      testFormat === "multiple-choice"
-        ? item.options.map((option, index) => `${index} ${option}`).join("\n")
-        : "",
-    ],
+    [item.question],
+    testFormat === "multiple-choice" &&
+      item.options.map((option, index) => `${index + 1} ${option}`).join("\n"),
     [isAnswerSheet ? item.answer : ""],
   ]);
 
