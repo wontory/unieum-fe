@@ -3,13 +3,17 @@ import autoTable from "jspdf-autotable";
 
 import { pretendard } from "../assets/fonts/pretendard";
 
-const generatePdf = (data, isAnswerSheet) => {
+const generatePdf = (data, testFormat, isAnswerSheet) => {
   const font = pretendard;
 
   const doc = new jsPDF();
 
   const tableData = data.flatMap((item) => [
-    [item.question],
+    [
+      item.question,
+      testFormat === "multiple-choice" &&
+        item.options.map((option) => option.text).join("\n"),
+    ],
     [isAnswerSheet ? item.answer : ""],
   ]);
 
