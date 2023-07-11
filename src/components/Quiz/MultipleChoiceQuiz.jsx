@@ -58,6 +58,7 @@ const MultipleChoiceQuiz = ({ questions }) => {
           {questions[currentIndex].options.map((option, index) => (
             <li
               className={showAnswer !== 0 && "disabled"}
+              disabled={showAnswer !== 0}
               onClick={() => checkAnswer(index)}
             >
               <a className="bg-gray-100 p-4">
