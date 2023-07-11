@@ -15,7 +15,7 @@ const ShortAnswerQuiz = ({ questions }) => {
     if (currentIndex === 0) {
       alert("이전 문제가 없습니다.");
     } else {
-      setCurrentIndex((curIndex) => curIndex - 1);
+      setCurrentIndex((prev) => prev - 1);
       setShowAnswer(false);
       userAnswer.current.value = "";
     }
@@ -26,7 +26,7 @@ const ShortAnswerQuiz = ({ questions }) => {
       alert("퀴즈가 끝났습니다!");
       navigate("/my");
     } else {
-      setCurrentIndex((curIndex) => curIndex + 1);
+      setCurrentIndex((prev) => prev + 1);
       setShowAnswer(false);
       userAnswer.current.value = "";
     }
