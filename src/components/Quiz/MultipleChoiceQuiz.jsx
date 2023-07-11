@@ -56,8 +56,11 @@ const MultipleChoiceQuiz = ({ questions }) => {
         <div className="card-title">{questions[currentIndex].question}</div>
         <ul className="menu menu-lg w-full rounded-box gap-3 p-0">
           {questions[currentIndex].options.map((option, index) => (
-            <li className={showAnswer !== 0 && "disabled"}>
-              <a className="bg-gray-100 p-4" onClick={() => checkAnswer(index)}>
+            <li
+              className={showAnswer !== 0 && "disabled"}
+              onClick={() => checkAnswer(index)}
+            >
+              <a className="bg-gray-100 p-4">
                 <p className="text-xl">{circledDigit[index]}</p>
                 <span>{option}</span>
               </a>
