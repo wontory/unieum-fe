@@ -6,17 +6,17 @@ const MultipleChoiceQuiz = ({ questions }) => {
   const navigate = useNavigate();
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [showAnswer, setShowAnswer] = useState(0);
+  const [showAnswer, setShowAnswer] = useState(false);
 
   const circledDigit = ["①", "②", "③", "④"];
 
   const checkAnswer = (index) => {
-    setShowAnswer(1);
-    if (index === questions[currentIndex].answer) {
-      alert("정답입니다!");
-    } else {
-      alert("오답입니다!");
-    }
+    setShowAnswer(true);
+    // if (index === questions[currentIndex].answer) {
+    //   alert("정답입니다!");
+    // } else {
+    //   alert("오답입니다!");
+    // }
   };
 
   const handlePrevQuestion = () => {
@@ -24,7 +24,7 @@ const MultipleChoiceQuiz = ({ questions }) => {
       alert("이전 문제가 없습니다.");
     } else {
       setCurrentIndex((prev) => prev - 1);
-      setShowAnswer(0);
+      setShowAnswer(false);
     }
   };
 
@@ -34,12 +34,12 @@ const MultipleChoiceQuiz = ({ questions }) => {
       navigate("/my");
     } else {
       setCurrentIndex((prev) => prev + 1);
-      setShowAnswer(0);
+      setShowAnswer(false);
     }
   };
 
   const handleShowAnswer = () => {
-    setShowAnswer((prev) => (prev === 0 ? 2 : 0));
+    setShowAnswer((prev) => !prev);
   };
 
   return (
@@ -56,17 +56,17 @@ const MultipleChoiceQuiz = ({ questions }) => {
         <div className="card-title">{questions[currentIndex].question}</div>
         <ul className="menu menu-lg w-full rounded-box gap-3 p-0">
           {questions[currentIndex].options.map((option, index) => (
-            <li>
+            <li className={showAnswer && "disabled"}>
               <button
                 className={
-                  (showAnswer === 2
+                  (showAnswer
                     ? index === questions[currentIndex].answer
                       ? "bg-green-100"
                       : "bg-red-100"
                     : "bg-gray-100") + " p-4"
                 }
+                disabled={showAnswer}
                 onClick={() => checkAnswer(index)}
-                disabled={showAnswer !== 0}
               >
                 <p className="text-xl">{circledDigit[index]}</p>
                 <span>{option}</span>
@@ -86,7 +86,7 @@ const MultipleChoiceQuiz = ({ questions }) => {
           className="btn btn-primary w-1/3 join-item"
           onClick={handleShowAnswer}
         >
-          {showAnswer === 0 ? "정답 보기" : "다시 풀기"}
+          {showAnswer ? "다시 풀기" : "정답 보기"}
         </button>
         <button
           className="btn btn-neutral w-1/3 join-item"
