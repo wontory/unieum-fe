@@ -11,7 +11,7 @@ const Quiz = () => {
   const { id } = useParams();
 
   const [outputTestFormat, setOutputTestFormat] = useState();
-  const [questions, setQuestions] = useState([]);
+  const [questions, setQuestions] = useState();
 
   useEffect(() => {
     testApi.getTest(id).then((res) => {
@@ -23,7 +23,7 @@ const Quiz = () => {
   }, [id]);
 
   return (
-    questions[0] &&
+    questions &&
     (outputTestFormat === "multiple-choice" ? (
       <MultipleChoiceQuiz questions={questions} />
     ) : (

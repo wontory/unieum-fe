@@ -7,7 +7,7 @@ import { ReactComponent as RobotIcon } from "../../assets/images/robot_icon.svg"
 import { ReactComponent as UnieumIcon } from "../../assets/images/unieum_icon.svg";
 
 const Answer = ({ question, answer, userAnswer }) => {
-  const [feedback, setFeedback] = useState("");
+  const [feedback, setFeedback] = useState();
 
   useEffect(() => {
     const data = {
