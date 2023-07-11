@@ -80,8 +80,8 @@ const Uploader = ({ dataType, data, disabled }) => {
     <>
       <div className="card card-bordered rounded-t-none border-t-0 bg-base-100">
         <div className="card-body p-0 gap-0">
-          <div className="card-actions justify-end items-center px-6 py-4">
-            {ctx.isSignedIn ? (
+          <div className="card-actions justify-between items-center px-6 py-4">
+            {!ctx.isSignedIn ? (
               <>
                 <div className="form-control">
                   <label className="label p-0 pb-2">
@@ -99,23 +99,25 @@ const Uploader = ({ dataType, data, disabled }) => {
                     onChange={handleCountOfQuestions}
                   />
                 </div>
-                <select
-                  className="select select-bordered"
-                  value={targetTestFormat}
-                  onChange={handleTestType}
-                >
-                  <option value="short-answer">주관식</option>
-                  <option value="multiple-choice">객관식</option>
-                </select>
-                <button
-                  className="btn btn-primary"
-                  onClick={
-                    dataType === "file" ? handleFileUpload : handleTextUpload
-                  }
-                  disabled={disabled}
-                >
-                  문제 생성
-                </button>
+                <div className="flex gap-4">
+                  <select
+                    className="select select-bordered"
+                    value={targetTestFormat}
+                    onChange={handleTestType}
+                  >
+                    <option value="short-answer">주관식</option>
+                    <option value="multiple-choice">객관식</option>
+                  </select>
+                  <button
+                    className="btn btn-primary"
+                    onClick={
+                      dataType === "file" ? handleFileUpload : handleTextUpload
+                    }
+                    disabled={disabled}
+                  >
+                    문제 생성
+                  </button>
+                </div>
               </>
             ) : (
               <Link
