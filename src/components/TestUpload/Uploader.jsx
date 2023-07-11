@@ -9,7 +9,7 @@ import { testApi } from "../../apis/testApi";
 import ModalPortal from "../UI/Modal/ModalPortal";
 import LoadingModal from "../UI/Modal/LoadingModal";
 
-const Uploader = ({ dataType, data, disabled }) => {
+const Uploader = ({ dataType, data }) => {
   const navigate = useNavigate();
 
   const ctx = useContext(AuthContext);
@@ -112,7 +112,7 @@ const Uploader = ({ dataType, data, disabled }) => {
                   onClick={
                     dataType === "file" ? handleFileUpload : handleTextUpload
                   }
-                  disabled={disabled}
+                  disabled={data.length === 0}
                 >
                   문제 생성
                 </button>

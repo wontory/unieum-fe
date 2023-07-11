@@ -33,7 +33,7 @@ const FileUpload = () => {
           disabled={!ctx.isSignedIn}
         />
       </StyledFilepondContainer>
-      <Uploader dataType="file" data={files} disabled={files.length === 0} />
+      <Uploader dataType="file" data={files} />
     </>
   );
 };
