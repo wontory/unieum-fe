@@ -20,7 +20,7 @@ const TextUpload = () => {
       <Uploader
         dataType="text"
         data={text.current.value}
-        disabled={text.current.value.length === 0}
+        disabled={text.current.value === ""}
       />
     </>
   );
