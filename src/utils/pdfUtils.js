@@ -8,13 +8,21 @@ const generatePdf = (data, testFormat, isAnswerSheet) => {
 
   const doc = new jsPDF();
 
-  const tableData = data.flatMap((item) => [
-    [item.question],
-    testFormat === "multiple-choice" && [
-      item.options.map((option, index) => `${index + 1} ${option}`).join("\n"),
-    ],
-    [isAnswerSheet ? item.answer : ""],
-  ]);
+  const tableData =
+    testFormat === "multiple-choice"
+      ? data.flatMap((item) => [
+          [item.question],
+          [
+            item.options
+              .map((option, index) => `${index + 1} ${option}`)
+              .join("\n"),
+          ],
+          [isAnswerSheet ? item.answer : ""],
+        ])
+      : data.flatMap((item) => [
+          [item.question],
+          [isAnswerSheet ? item.answer : ""],
+        ]);
 
   doc.addFileToVFS("pretendard.ttf", font);
   doc.addFont("pretendard.ttf", "pretendard", "normal");
