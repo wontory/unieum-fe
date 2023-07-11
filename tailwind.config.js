@@ -32,7 +32,8 @@ export default {
         unieum: {
           primary: "#6d94eb",
           "primary-content": "#eef3ff",
-          secondary: "#4ebb6c",
+          secondary: "#eef3ff",
+          "secondary-content": "#6d94eb",
           accent: "#fee500",
           neutral: "#2b3440",
           "base-100": "#ffffff",

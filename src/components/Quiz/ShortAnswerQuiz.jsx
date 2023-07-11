@@ -70,7 +70,10 @@ const ShortAnswerQuiz = ({ questions }) => {
           이전 문제
         </button>
         <button
-          className="btn btn-primary w-1/3 join-item"
+          className={
+            "btn w-1/3 join-item " +
+            (showAnswer ? "btn-secondary" : "btn-primary")
+          }
           onClick={handleShowAnswer}
         >
           {showAnswer ? "다시 풀기" : "정답 보기"}
