@@ -61,8 +61,8 @@ const MultipleChoiceQuiz = ({ questions }) => {
                 className={
                   (showAnswer
                     ? index === questions[currentIndex].answer
-                      ? "bg-green-100 border-green-500 text-green-500"
-                      : "bg-red-100 border-red-500 text-red-500"
+                      ? "bg-green-100 text-green-500 border border-green-500"
+                      : "bg-red-100 text-red-500 border border-red-500"
                     : "bg-gray-100") + " p-4"
                 }
                 disabled={showAnswer}
