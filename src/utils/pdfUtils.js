@@ -13,7 +13,7 @@ const generatePdf = (data, testFormat, isAnswerSheet) => {
       ? data.flatMap((item) => [
           [
             `${item.question}${
-              isAnswerSheet ? ` ... ${Number(item.answer) + 1}` : ""
+              isAnswerSheet ? ` ----- ${Number(item.answer) + 1}` : ""
             }`,
           ],
           [
