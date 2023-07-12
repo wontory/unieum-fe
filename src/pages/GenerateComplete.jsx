@@ -12,8 +12,9 @@ const GenerateComplete = () => {
   const downloadPdf = async (testGenerationId, withAnswers) => {
     const res = await testApi.getTest(testGenerationId);
     const testList = res.data.data.testList.map((e) => JSON.parse(e));
+    const testFormat = res.data.data.outputTestFormat;
 
-    const question_pdf = generatePdf(testList, withAnswers);
+    const question_pdf = generatePdf(testList, testFormat, withAnswers);
     const fileName = withAnswers ? "정답지.pdf" : "문제지.pdf";
     question_pdf.save(fileName);
   };

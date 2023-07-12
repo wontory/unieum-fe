@@ -68,7 +68,9 @@ const Main = () => {
       <div className="flex flex-col gap-3 md:flex-row justify-between">
         {featureArr.map((feature, index) => (
           <FeatureCard key={"feature" + index}>
-            <div className="badge badge-primary badge-lg">{feature.badge}</div>
+            <div className="badge badge-secondary badge-lg">
+              {feature.badge}
+            </div>
             <h2 className="card-title">{feature.title}</h2>
             <p>{feature.content}</p>
             <img src={feature.img} className="w-[170px] h-[201px]" />

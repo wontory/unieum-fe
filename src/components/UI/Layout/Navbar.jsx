@@ -4,7 +4,7 @@ import AuthContext from "../../../stores/auth-context";
 
 import { Link } from "react-router-dom";
 
-import { CgMenuRightAlt } from "react-icons/cg";
+import { CgMenu } from "react-icons/cg";
 import { BsChatFill } from "react-icons/bs";
 
 import { ReactComponent as Icon } from "../../../assets/images/unieum_icon.svg";
@@ -46,7 +46,7 @@ const Navbar = () => {
         )}
         <details className="dropdown dropdown-end lg:hidden">
           <summary className="btn btn-ghost btn-circle">
-            <CgMenuRightAlt size={24} />
+            <CgMenu size={24} />
           </summary>
           <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
             <li>
