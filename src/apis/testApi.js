@@ -3,7 +3,7 @@ import axios from "axios";
 const ROUTE = "test-generation";
 
 const testInstance = axios.create({
-  baseURL: "https://develop.unieum.kr:4000/",
+  baseURL: "https://server.unieum.kr",
   headers: {
     AccessControlAllowOrigin: "*",
   },

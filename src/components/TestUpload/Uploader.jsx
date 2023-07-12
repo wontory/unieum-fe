@@ -122,7 +122,7 @@ const Uploader = ({ dataType, data }) => {
             <div className="card-actions justify-end items-center px-6 py-4">
               <Link
                 className="btn btn-primary"
-                to="https://develop.unieum.kr:4000/auth/kakao"
+                to="https://server.unieum.kr/auth/kakao"
               >
                 로그인 후 이용하기
               </Link>

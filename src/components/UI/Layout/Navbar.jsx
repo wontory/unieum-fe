@@ -38,7 +38,7 @@ const Navbar = () => {
         ) : (
           <Link
             className="btn btn-accent hidden lg:flex"
-            to="https://develop.unieum.kr:4000/auth/kakao"
+            to="https://server.unieum.kr/auth/kakao"
           >
             <BsChatFill />
             로그인
@@ -61,9 +61,7 @@ const Navbar = () => {
               </li>
             ) : (
               <li>
-                <Link to="https://develop.unieum.kr:4000/auth/kakao">
-                  로그인
-                </Link>
+                <Link to="https://server.unieum.kr/auth/kakao">로그인</Link>
               </li>
             )}
           </ul>
